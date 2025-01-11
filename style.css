@@ -111,13 +111,36 @@ h3 {
 }
 h4 {
   font-family: 'Inter';
-  font-size: 30px;
+  font-size: 25px;
   color: #ffffff;
 }
-h5 {
-  color: white;
-  font-size: 40px;
+.addBtn {
+  padding: 10px;
+  color: #ffffff8f;
 }
+.addBtn:hover {
+  border-radius: 25px;
+  background-color: #bbbbbb46;
+  cursor:pointer;
+}
+#toggleSelectionMode {
+  display: block;
+  margin: 10px auto; /* Center horizontally */
+  padding: 8px 16px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #8163A1; /* Customize button color */
+  color: white;
+  cursor: pointer;
+}
+
+
+#toggleSelectionMode:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+
 #missionListContainer {
   background-color: #5C6C6C;
   border-radius: 20px;
@@ -133,22 +156,31 @@ h5 {
   margin: 0;
 }
 #taskList li {
-  color: white;
+  list-style: none;
+  padding: 8px;
+  margin: 0; /* Ensure uniform margins */
   display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-  font-size: 20px;
+  align-items: center; /* Align icons and text */
+  width: 100%; /* Force full width alignment */
+  box-sizing: border-box; /* Include padding and borders in the width */
 }
 
 .icon {
-  margin-right: 10px;
+  margin-right: 8px;
+  display: inline-block;
+  width: 20px; /* Fix icon width for consistency */
+  text-align: center;
 }
 
+
+
 .add-task {
-  color: #b3b3b3;
+  color: #999;
   font-style: italic;
-  cursor: text;
-  outline: none;
+  padding: 8px;
+  width: 100%; /* Ensure it matches the width of other items */
+  border: none; /* Remove any extra borders that could cause misalignment */
+  outline: none; /* Remove outline when editable */
 }
 
 .add-task:focus {
