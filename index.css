@@ -1,60 +1,224 @@
-@font-face {
-    font-family: 'AppleGaramond-Light';
-    src: url('./fonts/AppleGaramond-Light.ttf');
-  }
-  @font-face {
-    font-family: 'Inter';
-    src: url('./fonts/Inter_18pt-Medium.ttf');
-  }
+html, body {
+  height: 100%;
+  margin: 0;    
+}
 
 section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display:flex;
+  align-items:center; 
   min-height: 100vh;
   width: 100%;
-  background: url('background6.jpg') no-repeat center;
-  background-size: cover;
+  position: relative; 
 }
 
 .greyBG {
-    position: absolute; 
-    top: 0; 
-    left: 0; 
-    width: 60%; 
-    height: 100%; 
-    background: rgba(45, 54, 65, 1); 
-  }
-  
-  .navbar {
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 60px; 
-    background: rgba(76, 84, 94, 1);
-    border-radius: 10px; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(45, 54, 65, 1);
+  z-index: -1; /* Make sure greyBG is behind everything */
+}
 
-  }
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: rgba(76, 84, 94, 1);
+  border-radius: 10px;
+  z-index: 1; /* Navbar is above everything else */
+}
 
-  .side-text {
-    position: absolute;
-    top: 20%; /* Center vertically */
-    right: -5%; /* Place near the right edge */
-    max-width: 40%; /* Prevent the text from stretching too far */
-    color: white; /* White text */
-    font-size: 2rem; /* Large font size */
-    line-height: 1.5; /* Better spacing between lines */
-    text-align: left; /* Align text to the left */
-    z-index: 10; /* Ensure it stays on top of other content */
-  }
+.webpageTitle {
+  position: absolute;
+  top: 40%;
+  right: 41%;
+  color: white;
+  font-family: 'AppleGaramond', serif;
+  font-size: 60px;
+  font-weight: 400; 
+}
+
+.webpageDef {
+  position: absolute;
+  top: 52%;
+  right: 41%;
+  color: white;
+  font-family: 'AppleGaramond', serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.webpageDef2 {
+  position: absolute;
+  top: 52%;
+  right: 32%;
+  color:  rgba(255, 255, 255, 0.5);
+  font-family: 'AppleGaramond', serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+
+.webpagetext1 {
+  position: absolute;
+  top: 60%;
+  left: 52%;
+  color: white;
+  font-family: 'AppleGaramond', serif;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.imageRight {
+  position: fixed;
+  top: 60px;
+  right: 0%;
+  width: 55%;
+  height: 95%;
+  background: url('loginbg.jpg') no-repeat center;
+  background-size: cover; /* Make sure the image covers the container */
+}
+
+.webpagetext2 {
+  position: absolute;
+  top: 65%; 
+  left: 52%;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'AppleGaramond', serif;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.welcome {
+  position: absolute;
+  top: 15%; 
+  left: 5%; 
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 45px;
+  font-weight: 550;
+}
+
+.accountdesc {
+  position: absolute;
+  top: 28%; 
+  left: 5%; 
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.email {
+  position: absolute;
+  top: 45%; 
+  left: 5%; 
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.password {
+  position: absolute;
+  top: 59%; 
+  left: 5%; 
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+/* CSS for Email Input Box */
+.emailbox {
+  position: absolute; /* Absolute positioning */
+  top: 52%; 
+  left: 5%; 
+  width: 30%; /* Optional: adjust width if needed */
+}
+
+.emailbox input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  color: white;
+  background: rgba(255, 255, 255, 0.2); /* Transparent white background */
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.emailbox label {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  color: white;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+}
+
+/* CSS for Password Input Box */
+.passwordbox {
+  position: absolute; /* Absolute positioning */
+  top: 66%; /* Positioned below the email box */
+  left: 5%;
+  width: 30%; /* Optional: adjust width if needed */
+  padding-bottom: 5;
+}
+
+.passwordbox input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  color: white;
+  background: rgba(255, 255, 255, 0.2); /* Transparent white background */
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.passwordbox label {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  color: white;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+}
+
+input:focus {
+  border: 2px solid #fff; 
+  padding-bottom: 0;
+  /* Highlight the border when the input is focused */
+}
+
+.signinbox{
+  padding-bottom: 5%;
+  position:absolute;
   
-  .side-text strong {
-    font-size: 2.5rem; /* Even larger font for the word "dire" */
-  }
+}
+
+.button-div{
+  position: relative;
+  align-items: center;
+  top:245px ;
+  margin-left: 10%;
   
-  .side-text em {
-    font-style: italic;
-    color: #ccc; /* Slightly lighter color for 'adjective' */
-  }
-  
+}
+
+.signupbutton{
+  top:50%;
+  right:50%;
+  padding: 10;
+  background-color: antiquewhite;
+  color: rgb(15, 15, 15);
+  font-size: large;
+  border-radius: 5px;
+
+
+}
+
