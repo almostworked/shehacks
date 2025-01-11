@@ -1,24 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="index.css">
-  <title>shehacksL</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dire</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <section>
-    <div class="greyBG"></div>
-        <div class= "navbar"></div>
-        <div class="side-text">
-          <p>
-           <br> dire<br>
-           /ˈdī(ə)r/ <br>
-            <em>adjective</em><br><br>
-            (of a situation or event) extremely serious or urgent.<br><br>
-            “Failing to log your hydration habit on the space station could lead to dire dehydration in zero gravity.”
-          </p>
-        </div>
-      </section>
-        
-  </section>
+  <div id="top_header">
+    <div style="display: flex; gap: 0px;">
+      <h1>welcome back astronaut!</h1>
+      <h2>what will you do today?</h2>
+    </div>
+  </div>
+  <h3 id="month"></h3>
+  
+  <!-- Main container for calendar and goals -->
+  <div id="mainContainer">
+    <div id="calendar"></div>
+    <div id="habits">
+      <h4>add habit</h4>
+      <input type="text" id="input" placeholder="put on spaceboots...">
+      <span onclick="newElement()" class="addBtn">add</span>
+    </div>
+    <div id="missionListContainer">
+      <h4>today's missions</h4>
+      <button id="toggleSelectionMode">strike a mission</button>
+      <ul id="taskList">
+        <li>
+          <span class="icon">🏃</span>
+          <span class="task-text">go on a run +1</span>
+        </li>
+        <li>
+          <span class="icon">💧</span>
+          <span class="task-text">drink 1L of water +2</span>
+        </li>
+        <li>
+          <span class="icon">📖</span>
+          <span class="task-text">finish homework +2</span>
+        </li>
+        <li class="completed">
+          <span class="icon">🧘</span>
+          <span class="task-text">practice meditation +1</span>
+        </li>
+        <li id="addTask" contenteditable="true" class="add-task">➕ add a task</li>
+      </ul>
+      
+    </div>
+  </div>
+  
+  
+  <script src="script.js"></script>
 </body>
+
 </html>
