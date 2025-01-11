@@ -170,11 +170,19 @@ h4 {
   }
   #image-container {
     position: relative;
-    top: 325px; /* Moves the image down by 500px */
+    top: 380px; /* Moves the image down by 500px */
     left: 100px;
     display: flex;
   }
-  
+  #daysonMoon {
+    font-family: 'AppleGaramond-Light';
+  font-size: 25px;
+  position: relative;
+  top: 260px; /* Moves the image down by 500px */
+  left: 200px;
+  display: flex;
+  color: #ffffff;
+  }
   #image-container img {
     width: 100px;
     height: 100px;
