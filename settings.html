@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="settings.css">
+  <title>Settings</title>
+</head>
+<body>
+  <section>
+    <!-- Background -->
+    <div class="greyBG"></div>
+
+    <!-- Title -->
+    <div class="settingsTitle">
+      <p>settings</p>
+    </div>
+
+    <!-- Username Field -->
+    <div class="field-container username">
+      <label for="username-display">username</label>
+      <input type="text" id="username-display" placeholder="N/A" readonly>
+    </div>
+
+    <!-- Password Field -->
+    <div class="field-container password">
+      <label for="password-display">password</label>
+      <div class="password-field">
+        <input type="password" id="password-display" placeholder="N/A" readonly>
+        <button type="button" id="toggle-password" onclick="togglePassword()">👁️</button>
+      </div>
+    </div>
+
+    <!-- Change Button (below password field) -->
+    <div class="field-container password">
+      <span class="change-text" id="change-btn" onclick="toggleEdit()">Change</span>
+    </div>
+
+     <!-- Notifications Header -->
+     <div class="notificationHeader">
+        <p>notifications</p>
+      </div>
+
+      <div class= "notificationText">
+        <p>send daily notifications on habits</p>
+      </div>
+
+  </section>
+
+  <script>
+    // Load stored data into fields
+    window.onload = function() {
+      const email = localStorage.getItem('userEmail');
+      const password = localStorage.getItem('userPassword');
+
+      // Display stored data or default to "N/A"
+      document.getElementById('username-display').value = email || '';
+      document.getElementById('username-display').placeholder = email ? '' : 'N/A';
+      
+      document.getElementById('password-display').value = password || '';
+      document.getElementById('password-display').placeholder = password ? '' : 'N/A';
+    };
+
+    // Toggle editing for username and password
+    function toggleEdit() {
+      const usernameInput = document.getElementById('username-display');
+      const passwordInput = document.getElementById('password-display');
+      const changeButton = document.getElementById('change-btn');
+
+      // Toggle the readonly state for username and password
+      if (usernameInput.readOnly && passwordInput.readOnly) {
+        usernameInput.readOnly = false;
+        passwordInput.readOnly = false;
+        usernameInput.focus();
+        changeButton.textContent = 'Save';
+      } else {
+        // Save changes and disable editing
+        const newUsername = usernameInput.value;
+        const newPassword = passwordInput.value;
+
+        localStorage.setItem('userEmail', newUsername);
+        localStorage.setItem('userPassword', newPassword);
+
+        usernameInput.readOnly = true;
+        passwordInput.readOnly = true;
+        changeButton.textContent = 'Change';
+      }
+    }
+
+    // Toggle password visibility
+    function togglePassword() {
+      const passwordInput = document.getElementById('password-display');
+      const passwordToggleBtn = document.getElementById('toggle-password');
+
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text'; // Show password
+        passwordToggleBtn.textContent = '🙈'; // Change icon
+      } else {
+        passwordInput.type = 'password'; // Hide password
+        passwordToggleBtn.textContent = '👁️'; // Change icon back
+      }
+    }
+  </script>
+</body>
+</html>
