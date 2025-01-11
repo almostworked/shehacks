@@ -13,7 +13,6 @@ body {
     margin: 0;
     padding: 0;
 }
-
 #top_header {
   font-family: 'AppleGaramond-Light';
   position: fixed;
@@ -43,6 +42,13 @@ h2 {
   color: #ffffff58;
   font-size: 40px;
   text-align: left;
+}
+#mainContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 50px;
+  gap: 20px;
 }
 /* Month header */
 h3 {
@@ -88,14 +94,15 @@ h4 {
 }
 .addBtn:hover {
   background-color: #bbb;
-  
+}
+
 
 #missionListContainer {
   width: 25%; 
-    position: fixed;
-    right: 100px; 
-    top: 200px;
-    z-index: 10;
+  padding: 10px;
+  right: 100px; 
+  top: 200px;
+  z-index: 10;
 }
 
 #missionList {
@@ -136,90 +143,3 @@ h4 {
   color: gray;
 }
 
-
-#top_header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: none;
-    border: none;
-    background-color: #4C545E;
-}
-    .h1-two {
-        color: #94989E;  
-        padding-top: 10px;
-        font-size: 23px;
-        padding-left: 7px;
-    }
-#mainBanner {
-  padding-top: 10px;
-  font-size: 23px;
-}
-
-#missionListContainer {
-  width: 25%; 
-    position: fixed;
-    right: 100px; 
-    top: 200px;
-    z-index: 10;
-}
-
-#missionList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-#taskList li {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-  font-size: 20px;
-}
-
-.icon {
-  margin-right: 10px;
-}
-
-.add-task {
-  color: #b3b3b3;
-  font-style: italic;
-  cursor: text;
-  outline: none;
-}
-
-.add-task:focus {
-  color: white;
-  font-style: normal;
-}
-
-#taskList li input {
-  margin-left: 10px;
-  font-size: 18px;
-  padding: 5px;
-}
-.completed .task-text {
-  text-decoration: line-through;
-  color: gray;
-}
-
-
-#top_header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: none;
-    border: none;
-    background-color: #4C545E;
-}
-    .h1-two {
-        color: #94989E;  
-        padding-top: 10px;
-        font-size: 23px;
-        padding-left: 7px;
-    }
-#mainBanner {
-  padding-top: 10px;
-  font-size: 23px;
-}
