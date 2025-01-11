@@ -148,8 +148,6 @@ h4 {
     text-align: center;
   }
 
-
-
   .add-task {
     color: #999;
     font-style: italic;
@@ -158,7 +156,18 @@ h4 {
     border: none; /* Remove any extra borders that could cause misalignment */
     outline: none; /* Remove outline when editable */
   }
-
+  #image-container {
+    position: relative;
+    top: 325px; /* Moves the image down by 500px */
+    left: 100px;
+    display: flex;
+  }
+  
+  #image-container img {
+    width: 100px;
+    height: 100px;
+    display: block; /* Prevents extra space below the image */
+  }
   .add-task:focus {
     color: white;
     font-style: normal;
@@ -171,6 +180,6 @@ h4 {
 }
 .completed .task-text {
   text-decoration: line-through;
-  color: gray;
+  color: gray; 
 }
 
