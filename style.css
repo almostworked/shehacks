@@ -68,6 +68,13 @@ h3 {
   border-radius: 25px;
   
 }
+.day-square {
+  color: black;
+  width: 70px;
+  height: 70px;
+  border-radius: 20px;
+  background-color: #D9D9D9;
+}
 #addTask {
   width: 100px;
   height: 50px;
@@ -82,27 +89,6 @@ h4 {
 .addBtn:hover {
   background-color: #bbb;
   
-h1 {
-    font-family: 'AppleGaramond-Light';
-    padding-left: 45px;
-    padding-right: 0px;
-    font-size: 30px;
-    color: #FFFFFF;
-    text-align: left;
-}
-h2 {
-    color: #FFFFFF;
-    font-size: 10px;
-    padding-top: 50px;
-    text-align: left;
-}
-h3 {
-    padding-top: 100px;
-    padding-left: 100px;
-    font-size: 70px;
-    text-align: left;
-    color: #FFFFFF;
-}
 
 #missionListContainer {
   width: 25%; 
@@ -170,13 +156,7 @@ h3 {
   padding-top: 10px;
   font-size: 23px;
 }
-.day-square {
-  color: black;
-  width: 70px;
-  height: 70px;
-  border-radius: 20px;
-  background-color: #D9D9D9;
-}
+
 #missionListContainer {
   width: 25%; 
     position: fixed;
