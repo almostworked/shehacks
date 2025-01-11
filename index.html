@@ -19,6 +19,11 @@
   <!-- Main container for calendar and goals -->
   <div id="mainContainer">
     <div id="calendar"></div>
+    <div id="habits">
+      <h4>add habit</h4>
+      <input type="text" id="input" placeholder="put on spaceboots...">
+      <span onclick="newElement()" class="addBtn">add</span>
+    </div>
     <div id="missionListContainer">
       <h5>current goals</h5>
       <ul id="taskList">
@@ -43,11 +48,6 @@
     </div>
   </div>
   
-  <div id="habits">
-    <h4>add habit</h4>
-    <input type="text" id="input" placeholder="my habit">
-    <span onclick="newElement()" class="addBtn">add</span>
-  </div>
   
   <script src="script.js"></script>
 </body>

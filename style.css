@@ -86,23 +86,27 @@ h3 {
   height: 50px;
   border-radius: 20px;
 }
+/* Add habit*/
 h4 {
   font-family: 'Inter';
+  font-size: 30px;
+  color: #ffffff;
 }
 .addBtn {
   padding: 10px;
+  color: #ffffff8f;
 }
 .addBtn:hover {
-  background-color: #bbb;
+  border-radius: 25px;
+  background-color: #bbbbbb46;
+  cursor:pointer;
 }
-
 
 #missionListContainer {
   width: 25%; 
   padding: 10px;
   right: 100px; 
   top: 200px;
-  z-index: 10;
 }
 
 #missionList {

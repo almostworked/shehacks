@@ -50,8 +50,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
   }
 
-  const habit = document.getElementById('addTask');
-  habit.addEventListener("click", addHabit);
 
 });
 
