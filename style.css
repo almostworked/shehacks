@@ -16,26 +16,34 @@ body {
   
   h1 {
     font-family: 'AppleGaramond-Light';
-    font-size: 36px;
+    padding-left: 10px;
+    font-size: 30px;
     color: #FFFFFF;
     text-align: left;
   }
   h2 {
-    font-size: 50px;
+    color: #FFFFFF;
+    font-size: 10px;
+    padding-top: 50px;
+    text-align: left;
+  }
+  h3 {
+    padding-top: 100px;
+    padding-left: 100px;
+    font-size: 70px;
     text-align: left;
     color: #FFFFFF;
   }
   
   button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: none;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    background-color: #4C545E;
   }
   
-  button:hover {
-    background-color: #0056b3;
-  }
+ 
   
