@@ -75,11 +75,13 @@ h3 {
   
 }
 .day-square {
-  color: black;
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
   border-radius: 20px;
   background-color: #D9D9D9;
+}
+.day-square:hover {
+  color:#909090
 }
 #addTask {
   width: 100px;
@@ -87,22 +89,26 @@ h3 {
   border-radius: 20px;
 }
 /* Add habit*/
+#habits input[type="text"]{
+  font-family: 'AppleGaramond-Light';
+  font-style: italic;
+  font-size: 15px;
+  padding: 20px;
+  font-size: 20px;
+  border-radius: 15px;
+}
 h4 {
   font-family: 'Inter';
   font-size: 30px;
   color: #ffffff;
 }
-.addBtn {
-  padding: 10px;
-  color: #ffffff8f;
+h5 {
+  color: white;
+  font-size: 40px;
 }
-.addBtn:hover {
-  border-radius: 25px;
-  background-color: #bbbbbb46;
-  cursor:pointer;
-}
-
 #missionListContainer {
+  background-color: #5C6C6C;
+  border-radius: 20px;
   width: 25%; 
   padding: 10px;
   right: 100px; 
@@ -115,6 +121,7 @@ h4 {
   margin: 0;
 }
 #taskList li {
+  color: white;
   display: flex;
   align-items: center;
   margin-bottom: 15px;

@@ -8,8 +8,8 @@ function getUserMonth() {
 var habits = [];
 // Add a habit to habit list
 function addHabit() {
+  var input = document.getElementById("input");
   
-  alert("Clicked");
 
 }
 
@@ -33,6 +33,12 @@ function userGoals() {
 function friendActivity() {
 
 }
+document.getElementById("input").addEventListener("keydown", function(event) {
+  if (event.key == "Enter") {
+    event.preventDefault();
+    addHabit();
+  }
+});
 document.addEventListener('DOMContentLoaded', function() {
   const header = document.getElementById('month');
   header.textContent = getUserMonth();
@@ -49,7 +55,6 @@ document.addEventListener('DOMContentLoaded', function() {
     calendar.appendChild(square);
     
   }
-
 
 });
 
