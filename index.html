@@ -3,16 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Website</title>
+  <title>Dire</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <button>
-    <h1>welcome back astronaut! what will you do today?</h1>
+  <button id="top_header">
+    <div style="display: flex; gap: 0px;">
+      <h1>welcome back astronaut!</h1>
+      <h2>what will you do today?</h2>
+    </div>
   </button>
-  <!--<h1>this is a tester</h1>-->
   <!--<h2>you have spent 8 days on the moon</h2>-->
-  <h3>February</h3>
+  <h3 id="month"></h3>
+  <button id="calendar"></button>
+  <div id="habits">
+    <h4>add habit</h4>
+    <input type="text" id="input" placeholder="my habit">
+    <span onclick="newElement()" class="addBtn">add</span>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
