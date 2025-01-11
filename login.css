@@ -204,17 +204,17 @@ input:focus {
 .button-div {
   position: relative;
   align-items: center;
-  top: 245px;
-  margin-left: 10%;
+  top: 265px;
+  margin-left: 16%;
 }
 
 .signupbutton {
   padding: 12px 24px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: #9178AC;
   color: white;
   font-size: 18px;
   font-family: 'Inter', sans-serif;
-  border: 2px solid #fff;
+  border: 2px solid #C9AEE6;
   border-radius: 5px;
   cursor: pointer;
   text-align: center;
