@@ -6,6 +6,7 @@
   <title>Dire</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <!-- Display the image here -->
   <div id="image-container">
@@ -18,35 +19,15 @@
       <h2>what will you do today?</h2>
     </div>
   </div>
-  <div id="month_display">
-    <h3 id="month"></h3>
-   <!---- 
-   <section>
-      <div class="disply" style="margin-top: 20px;">
-          <p>Display</p>
-          <div class="dropdown">
-              <img src=".pngs/pngegg.png" height="35" width="35" alt="Dropdown image" style="margin-top: -10px; ">
-          </img>
-          </div>
-          <div class="wd">
-              <p>week</p>
-          </div>
-      </div>
-  </section>
--->
-  </div>
-  
+  <h3 id="month"></h3>
   
   <!-- Main container for calendar and goals -->
   <div id="mainContainer">
-    <div id="calendar">
-      
-    </div>
-    <div id="habitBox">
+    <div id="calendar"></div>
+    <div id="habits">
       <h4>add habit</h4>
       <input type="text" id="input" placeholder="put on spaceboots...">
-      <button onclick="addHabit()">Add</button>
-      <ol id="habits"</ol>
+      <span onclick="newElement()" class="addBtn">add</span>
     </div>
     <div id="missionListContainer">
       <h4>today's missions</h4>
