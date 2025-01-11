@@ -1,0 +1,7 @@
+Main background: #2D3641
+Current goals: #5C6C6C
+Faded black: #1D1715
+Space grey: #4C545E
+Plain grey: #7E8287
+Blank calendar square: #D9D9D9
+Calendar: #909090

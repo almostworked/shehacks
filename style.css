@@ -12,30 +12,30 @@ body {
     background-color: #2D3641;
     margin: 0;
     padding: 0;
-  }
+}
   
-  h1 {
+h1 {
     font-family: 'AppleGaramond-Light';
     padding-left: 10px;
     font-size: 30px;
     color: #FFFFFF;
     text-align: left;
-  }
-  h2 {
+}
+h2 {
     color: #FFFFFF;
     font-size: 10px;
     padding-top: 50px;
     text-align: left;
-  }
-  h3 {
+}
+h3 {
     padding-top: 100px;
     padding-left: 100px;
     font-size: 70px;
     text-align: left;
     color: #FFFFFF;
-  }
-  
-  button {
+}
+
+#top_header {
     position: fixed;
     top: 0;
     left: 0;
@@ -43,7 +43,31 @@ body {
     padding: none;
     border: none;
     background-color: #4C545E;
-  }
+}
+
+#calendar {
+  background-color: #909090;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 10px;
+  padding-left: 25px;
+  padding-top: 25px;
+  margin-left: 50px;
+  margin-top: -20px;
+  cursor: default;
+  width: 700px;
+  height: 530px;
+  border-radius: 25px;
+  
+}
+.day-square {
+  color: black;
+  width: 70px;
+  height: 70px;
+  border-radius: 20px;
+  background-color: #D9D9D9;
+}
+
   
  
   
