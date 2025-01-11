@@ -16,7 +16,8 @@ body {
   
 h1 {
     font-family: 'AppleGaramond-Light';
-    padding-left: 10px;
+    padding-left: 45px;
+    padding-right: 0px;
     font-size: 30px;
     color: #FFFFFF;
     text-align: left;
@@ -44,7 +45,16 @@ h3 {
     border: none;
     background-color: #4C545E;
 }
-
+    .h1-two {
+        color: #94989E;  
+        padding-top: 10px;
+        font-size: 23px;
+        padding-left: 7px;
+    }
+#mainBanner {
+  padding-top: 10px;
+  font-size: 23px;
+}
 #calendar {
   background-color: #909090;
   display: grid;
