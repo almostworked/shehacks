@@ -7,7 +7,6 @@ function getUserMonth() {
 }
 
 let selectionMode = false;
-
 function toggleSelectionMode() {
   selectionMode = !selectionMode;
   const button = document.getElementById('toggleSelectionMode');
@@ -33,6 +32,18 @@ document.addEventListener('DOMContentLoaded', function() {
   const taskItems = document.querySelectorAll('#taskList li');
   taskItems.forEach(item => {
     makeTaskEditable(item);
+  });
+  
+  document.getElementById("input").addEventListener("keydown", function(event) {
+    if (event.key == "Enter") {
+      var input = document.getElementById("input").value;
+      if (input.trim() !== "") {
+        var item = document.createElement("li");
+        item.textContent = input;
+        document.getElementById("habits").appendChild(item);
+        document.getElementById("input").value = "";
+      }
+    }
   });
 
   document.getElementById('addTask').addEventListener('keypress', function (event) {
