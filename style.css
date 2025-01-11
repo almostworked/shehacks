@@ -80,6 +80,10 @@ h3 {
   height: 70px;
   border-radius: 20px;
   background-color: #D9D9D9;
+  
+}
+.day-square:hover {
+  color:#2D3641;
 }
 #addTask {
   width: 100px;

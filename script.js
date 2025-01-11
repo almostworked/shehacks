@@ -13,6 +13,7 @@ function toggleSelectionMode() {
   button.textContent = selectionMode ? 'finish striking' : 'strike a mission';
 }
 
+/*Load calendar*/
 document.addEventListener('DOMContentLoaded', function() {
   const header = document.getElementById('month');
   header.textContent = getUserMonth();
@@ -26,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
   for (let i = 1; i <= daysInMonth; i++) {
     const square = document.createElement('div');
     square.classList.add('day-square');
+    square.setAttribute('day', i);
     calendar.appendChild(square);
   }
 
@@ -33,7 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
   taskItems.forEach(item => {
     makeTaskEditable(item);
   });
-  
+
+  /*Habit list*/
   document.getElementById("input").addEventListener("keydown", function(event) {
     if (event.key == "Enter") {
       var input = document.getElementById("input").value;
