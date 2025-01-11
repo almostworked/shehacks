@@ -36,6 +36,53 @@ h3 {
     color: #FFFFFF;
 }
 
+#missionListContainer {
+  width: 25%; 
+    position: fixed;
+    right: 100px; 
+    top: 200px;
+    z-index: 10;
+}
+
+#missionList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#taskList li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+.add-task {
+  color: #b3b3b3;
+  font-style: italic;
+  cursor: text;
+  outline: none;
+}
+
+.add-task:focus {
+  color: white;
+  font-style: normal;
+}
+
+#taskList li input {
+  margin-left: 10px;
+  font-size: 18px;
+  padding: 5px;
+}
+.completed .task-text {
+  text-decoration: line-through;
+  color: gray;
+}
+
+
 #top_header {
     position: fixed;
     top: 0;

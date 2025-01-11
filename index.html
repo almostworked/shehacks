@@ -6,16 +6,48 @@
   <title>Dire</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+  <!-- Top bannerheader -->
   <button id="top_header">
     <div style="display: flex; gap: 0px;">
       <h1 id="mainBanner">welcome back astronaut!</h1>
       <h1 class="h1-two">what will you do today?</h1>
     </div>
   </button>
-  <!--<h2>you have spent 8 days on the moon</h2>-->
+
+  <!-- Month Info -->
   <h3 id="month"></h3>
+
+  <!-- Calendar -->
   <button id="calendar"></button>
+
+  <!-- Mission List Section -->
+  <div id="missionListContainer">
+    <h1>current goals</h1>
+   <!-- <hr> -->
+    <ul id="taskList">
+        <li>
+            <span class="icon">🏃</span>
+            <span class="task-text">go on a run +1</span>
+        </li>
+        <li>
+            <span class="icon">💧</span>
+            <span class="task-text">drink 1L of water +2</span>
+        </li>
+        <li>
+            <span class="icon">📖</span>
+            <span class="task-text">finish homework +2</span>
+        </li>
+        <li class="completed">
+            <span class="icon">🧘</span>
+            <span class="task-text">practice meditation +1</span>
+        </li>
+        <li id="addTask" contenteditable="true" class="add-task">➕ add a task</li>
+    </ul>
+  </div>
+
+  <!-- Link to script -->
   <script src="script.js"></script>
 </body>
 </html>

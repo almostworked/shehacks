@@ -53,6 +53,57 @@ document.addEventListener('DOMContentLoaded', function() {
     button.appendChild(square);
     
   }
+ // Make all existing list items editable
+const taskItems = document.querySelectorAll('#taskList li');
+taskItems.forEach(item => {
+    makeTaskEditable(item);
+});
+
+document.getElementById('addTask').addEventListener('keypress', function (event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        const taskText = this.textContent.trim();
+        if (taskText !== '➕ add a task' && taskText !== '') {
+            addNewTask(taskText);
+            this.textContent = '➕ add a task'; // Reset placeholder
+        }
+    }
+});
+
+  function addNewTask(taskText) {
+      const taskList = document.getElementById('taskList');
+      const newTask = document.createElement('li');
+
+      const iconSpan = document.createElement('span');
+      iconSpan.className = 'icon';
+      iconSpan.textContent = '📝'; // Default icon for new tasks
+
+    const textSpan = document.createElement('span');
+    textSpan.className = 'task-text';
+    textSpan.textContent = taskText;
+
+    newTask.appendChild(iconSpan);
+    newTask.appendChild(textSpan);
+    makeTaskEditable(newTask); // Make the new task editable
+    taskList.insertBefore(newTask, document.getElementById('addTask'));
+}
+
+function makeTaskEditable(taskItem) {
+    taskItem.setAttribute('contenteditable', 'true'); // Make the task editable
+    taskItem.addEventListener('click', toggleTaskCompletion);
+    taskItem.addEventListener('keypress', function (event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            taskItem.blur(); // Remove focus to avoid adding a new line
+        }
+    });
+}
+
+function toggleTaskCompletion(event) {
+    const taskItem = event.currentTarget;
+    taskItem.classList.toggle('completed');
+}
+
 
 });
 
