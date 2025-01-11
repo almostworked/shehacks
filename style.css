@@ -1,5 +1,13 @@
+@font-face {
+  font-family: 'AppleGaramond-Light';
+  src: url('./fonts/AppleGaramond-Light.ttf');
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('./fonts/Inter_18pt-Medium.ttf');
+}
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Inter';
     text-align: center;
     background-color: #2D3641;
     margin: 0;
@@ -7,8 +15,15 @@ body {
   }
   
   h1 {
+    font-family: 'AppleGaramond-Light';
+    font-size: 36px;
     color: #FFFFFF;
-    font-size: medium;
+    text-align: left;
+  }
+  h2 {
+    font-size: 50px;
+    text-align: left;
+    color: #FFFFFF;
   }
   
   button {
