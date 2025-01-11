@@ -1,129 +1,130 @@
-  @font-face {
-    font-family: 'AppleGaramond-Light';
-    src: url('./fonts/AppleGaramond-Light.ttf');
-  }
-  @font-face {
+@font-face {
+  font-family: 'AppleGaramond-Light';
+  src: url('./fonts/AppleGaramond-Light.ttf');
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('./fonts/Inter_18pt-Medium.ttf');
+}
+body {
     font-family: 'Inter';
-    src: url('./fonts/Inter_18pt-Medium.ttf');
-  }
-  body {
-      font-family: 'Inter';
-      text-align: center;
-      background-color: #2D3641;
-      margin: 0;
-      padding: 0;
-  }
-  #top_header {
-    font-family: 'AppleGaramond-Light';
-    position: fixed;
+    text-align: center;
+    background-color: #2D3641;
+    margin: 0;
+    padding: 0;
+}
+#top_header {
+  font-family: 'AppleGaramond-Light';
+  position: fixed;
+  font-size: 40px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: none;
+  border: none;
+  background-color: #4C545E;
+}
+/* Welcome back astronaut*/
+h1 {
     font-size: 40px;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: none;
-    border: none;
-    background-color: #4C545E;
-  }
-  /* Welcome back astronaut*/
-  h1 {
-      font-size: 40px;
-      font-weight: lighter;
-      padding-left: 25px;
-      padding-top: none;
-      padding-right: 0px;
-      color: #FFFFFF;
-      text-align: left;
-  }
-  /*What will you do today?*/
-  h2 {
     font-weight: lighter;
-    padding-top: none;
-    padding-left: 30px;
-    color: #ffffff58;
-    font-size: 40px;
-    text-align: left;
-  }
-  #mainContainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin: 50px;
-    gap: 20px;
-  }
-  /* Month header */
-  h3 {
-      padding-top: 200px;
-      padding-left: 205px;
-      font-size: 60px;
-      text-align: left;
-      color: #FFFFFF;
-  }
-
-  #calendar {
-    background-color: #909090;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    padding: 10px;
     padding-left: 25px;
-    padding-top: 25px;
-    margin-left: 50px;
-    margin-top: -20px;
-    cursor: default;
-    width: 700px;
-    height: 530px;
-    border-radius: 25px;
-    
-  }
-  .day-square {
-    color: black;
-    width: 70px;
-    height: 70px;
-    border-radius: 20px;
-    background-color: #D9D9D9;
-  }
-  #addTask {
-    width: 100px;
-    height: 50px;
-    border-radius: 20px;
-  }
-  /* Add habit*/
-  h4 {
-    font-family: 'Inter';
-    font-size: 25px;
-    color: #ffffff;
-  }
-  .addBtn {
-    padding: 10px;
-    color: #ffffff8f;
-  }
-  .addBtn:hover {
-    border-radius: 25px;
-    background-color: #bbbbbb46;
-    cursor:pointer;
-  }
-  #toggleSelectionMode {
-    display: block;
-    margin: 10px auto; /* Center horizontally */
-    padding: 8px 16px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    background-color: #C9AEE6; /* Customize button color */
-    color: white;
-    cursor: pointer;
-  }
+    padding-top: none;
+    padding-right: 0px;
+    color: #FFFFFF;
+    text-align: left;
+}
+/*What will you do today?*/
+h2 {
+  font-weight: lighter;
+  padding-top: none;
+  padding-left: 30px;
+  color: #ffffff58;
+  font-size: 40px;
+  text-align: left;
+}
+#mainContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 50px;
+  gap: 20px;
+}
+/* Month header */
+h3 {
+    padding-top: 200px;
+    padding-left: 205px;
+    font-size: 60px;
+    text-align: left;
+    color: #FFFFFF;
+}
+
+#calendar {
+  background-color: #909090;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 10px;
+  padding-left: 25px;
+  padding-top: 25px;
+  margin-left: 50px;
+  margin-top: -20px;
+  cursor: default;
+  width: 700px;
+  height: 530px;
+  border-radius: 25px;
+  
+}
+.day-square {
+  color: black;
+  width: 70px;
+  height: 70px;
+  border-radius: 20px;
+  background-color: #D9D9D9;
+}
+#addTask {
+  width: 100px;
+  height: 50px;
+  border-radius: 20px;
+}
+/* Add habit*/
+h4 {
+  font-family: 'Inter';
+  font-size: 25px;
+  color: #ffffff;
+}
+.addBtn {
+  padding: 10px;
+  color: #ffffff8f;
+}
+.addBtn:hover {
+  border-radius: 25px;
+  background-color: #bbbbbb46;
+  cursor:pointer;
+}
+#toggleSelectionMode {
+  display: block;
+  margin: 10px auto; /* Center horizontally */
+  padding: 8px 16px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #8163A1; /* Customize button color */
+  color: white;
+  cursor: pointer;
+}
+
 
   #toggleSelectionMode:hover {
     background-color: #8163A1; /* Darker green on hover */
   }
 
 
-  #missionListContainer {
-    width: 25%; 
-    padding: 10px;
-    right: 100px; 
-    top: 200px;
-  }
+#missionListContainer {
+  width: 25%; 
+  padding: 10px;
+  right: 100px; 
+  top: 200px;
+}
 
   #missionList {
     list-style: none;
@@ -163,28 +164,13 @@
     font-style: normal;
   }
 
-  #taskList li input {
-    margin-left: 10px;
-    font-size: 18px;
-    padding: 5px;
-  }
-  .completed .task-text {
-    text-decoration: line-through;
-    color: gray;
-  }
-  #image-container {
-    position: relative;
-    top: 330px; /* Moves the image down by 500px */
-    left: 100px;
-    display: flex;
-  }
-  
-  
-  #image-container img {
-    width: 100px;
-    height: 100px;
-    display: block; /* Prevents extra space below the image */
-  }
-  
-  
+#taskList li input {
+  margin-left: 10px;
+  font-size: 18px;
+  padding: 5px;
+}
+.completed .task-text {
+  text-decoration: line-through;
+  color: gray;
+}
 
