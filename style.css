@@ -13,6 +13,7 @@ body {
     margin: 0;
     padding: 0;
 }
+
 #top_header {
   font-family: 'AppleGaramond-Light';
   position: fixed;
@@ -80,6 +81,94 @@ h4 {
 }
 .addBtn:hover {
   background-color: #bbb;
+  
+h1 {
+    font-family: 'AppleGaramond-Light';
+    padding-left: 45px;
+    padding-right: 0px;
+    font-size: 30px;
+    color: #FFFFFF;
+    text-align: left;
+}
+h2 {
+    color: #FFFFFF;
+    font-size: 10px;
+    padding-top: 50px;
+    text-align: left;
+}
+h3 {
+    padding-top: 100px;
+    padding-left: 100px;
+    font-size: 70px;
+    text-align: left;
+    color: #FFFFFF;
+}
+
+#missionListContainer {
+  width: 25%; 
+    position: fixed;
+    right: 100px; 
+    top: 200px;
+    z-index: 10;
+}
+
+#missionList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#taskList li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+.add-task {
+  color: #b3b3b3;
+  font-style: italic;
+  cursor: text;
+  outline: none;
+}
+
+.add-task:focus {
+  color: white;
+  font-style: normal;
+}
+
+#taskList li input {
+  margin-left: 10px;
+  font-size: 18px;
+  padding: 5px;
+}
+.completed .task-text {
+  text-decoration: line-through;
+  color: gray;
+}
+
+
+#top_header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: none;
+    border: none;
+    background-color: #4C545E;
+}
+    .h1-two {
+        color: #94989E;  
+        padding-top: 10px;
+        font-size: 23px;
+        padding-left: 7px;
+    }
+#mainBanner {
+  padding-top: 10px;
+  font-size: 23px;
 }
 .day-square {
   color: black;
@@ -88,10 +177,69 @@ h4 {
   border-radius: 20px;
   background-color: #D9D9D9;
 }
+#missionListContainer {
+  width: 25%; 
+    position: fixed;
+    right: 100px; 
+    top: 200px;
+    z-index: 10;
+}
 
-  
- 
-  
-  
- 
-  
+#missionList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#taskList li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+.add-task {
+  color: #b3b3b3;
+  font-style: italic;
+  cursor: text;
+  outline: none;
+}
+
+.add-task:focus {
+  color: white;
+  font-style: normal;
+}
+
+#taskList li input {
+  margin-left: 10px;
+  font-size: 18px;
+  padding: 5px;
+}
+.completed .task-text {
+  text-decoration: line-through;
+  color: gray;
+}
+
+
+#top_header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: none;
+    border: none;
+    background-color: #4C545E;
+}
+    .h1-two {
+        color: #94989E;  
+        padding-top: 10px;
+        font-size: 23px;
+        padding-left: 7px;
+    }
+#mainBanner {
+  padding-top: 10px;
+  font-size: 23px;
+}

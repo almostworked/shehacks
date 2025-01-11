@@ -4,8 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dire</title>
+  <title>Dire</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <button id="top_header">
     <div style="display: flex; gap: 0px;">
@@ -20,6 +22,29 @@
     <h4>add habit</h4>
     <input type="text" id="input" placeholder="my habit">
     <span onclick="newElement()" class="addBtn">add</span>
+  </div>
+  <div id="missionListContainer">
+    <h1>current goals</h1>
+   <!-- <hr> -->
+    <ul id="taskList">
+        <li>
+            <span class="icon">🏃</span>
+            <span class="task-text">go on a run +1</span>
+        </li>
+        <li>
+            <span class="icon">💧</span>
+            <span class="task-text">drink 1L of water +2</span>
+        </li>
+        <li>
+            <span class="icon">📖</span>
+            <span class="task-text">finish homework +2</span>
+        </li>
+        <li class="completed">
+            <span class="icon">🧘</span>
+            <span class="task-text">practice meditation +1</span>
+        </li>
+        <li id="addTask" contenteditable="true" class="add-task">➕ add a task</li>
+    </ul>
   </div>
   <script src="script.js"></script>
 </body>
