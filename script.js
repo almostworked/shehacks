@@ -9,8 +9,11 @@ var habits = [];
 // Add a habit to habit list
 function addHabit() {
   var input = document.getElementById("input");
-  
-
+  var habit = input.ariaValueMax;
+  var habitList = document.getElementById("habits");
+  var item = document.createElement("li");
+  item.textContent = habit;
+  habitList.appendChild(item);
 }
 
 // Get the user's current streak of tasks completed
