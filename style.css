@@ -94,13 +94,20 @@ h3 {
   border-radius: 20px;
 }
 /* Add habit*/
-#habits input[type="text"]{
+#habitBox input[type="text"]{
   font-family: 'AppleGaramond-Light';
   font-style: italic;
   font-size: 15px;
   padding: 20px;
   font-size: 20px;
   border-radius: 15px;
+}
+#habits {
+  list-style-type: none;
+
+}
+#habits li {
+  font-size: 20px;
 }
 h4 {
   font-family: 'Inter';

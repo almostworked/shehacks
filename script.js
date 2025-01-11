@@ -9,8 +9,14 @@ var habits = [];
 // Add a habit to habit list
 function addHabit() {
   var input = document.getElementById("input");
-  var habit = input.ariaValueMax;
+  var habit = input.ariaValueMax.trim();
   var habitList = document.getElementById("habits");
+
+  if (habit != "") {
+    var item = document.createElement("li");
+    item.textContent = habit;
+    
+  }
   var item = document.createElement("li");
   item.textContent = habit;
   habitList.appendChild(item);
