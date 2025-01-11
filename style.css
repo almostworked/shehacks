@@ -92,14 +92,23 @@ h4 {
   font-size: 25px;
   color: #ffffff;
 }
-.addBtn {
-  padding: 10px;
-  color: #ffffff8f;
+#input {
+  font-size: 25px;
+  font-family: 'AppleGaramond-Light';
+  font-style: italic;
+  border-radius: 8px;
+  padding: 20px;
+  
 }
-.addBtn:hover {
-  border-radius: 25px;
-  background-color: #bbbbbb46;
-  cursor:pointer;
+#habits {
+  list-style-type: none;
+  color: white;
+  font-size: 30px;
+  
+}
+
+#habitList {
+  align-items: start;
 }
 #toggleSelectionMode {
   display: block;
@@ -120,6 +129,8 @@ h4 {
 
 
 #missionListContainer {
+  background-color: #5C6C6C;
+  border-radius: 25px;
   width: 25%; 
   padding: 10px;
   right: 100px; 
@@ -132,6 +143,7 @@ h4 {
     margin: 0;
   }
   #taskList li {
+    color: white;
     list-style: none;
     padding: 8px;
     margin: 0; /* Ensure uniform margins */
