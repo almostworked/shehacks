@@ -11,7 +11,7 @@ let selectionMode = false;
 function toggleSelectionMode() {
   selectionMode = !selectionMode;
   const button = document.getElementById('toggleSelectionMode');
-  button.textContent = selectionMode ? 'Exit Selection Mode' : 'Enter Selection Mode';
+  button.textContent = selectionMode ? 'finish striking' : 'strike a mission';
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -85,3 +85,4 @@ function makeTaskEditable(taskItem) {
 function toggleTaskCompletion(taskItem) {
   taskItem.classList.toggle('completed');
 }
+

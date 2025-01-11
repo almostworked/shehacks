@@ -89,7 +89,7 @@ h3 {
 /* Add habit*/
 h4 {
   font-family: 'Inter';
-  font-size: 30px;
+  font-size: 25px;
   color: #ffffff;
 }
 .addBtn {
@@ -102,15 +102,17 @@ h4 {
   cursor:pointer;
 }
 #toggleSelectionMode {
-  background-color: #4caf50; /* Green background */
-  color: white; /* White text */
-  border: none; /* Remove default borders */
-  padding: 10px 20px; /* Padding for comfortable size */
-  font-size: 16px; /* Font size for readability */
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor to indicate interactivity */
-  margin-bottom: 10px; /* Space below the button */
+  display: block;
+  margin: 10px auto; /* Center horizontally */
+  padding: 8px 16px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #007acc; /* Customize button color */
+  color: white;
+  cursor: pointer;
 }
+
 
 #toggleSelectionMode:hover {
   background-color: #45a049; /* Darker green on hover */
@@ -145,6 +147,7 @@ h4 {
   width: 20px; /* Fix icon width for consistency */
   text-align: center;
 }
+
 
 
 .add-task {
