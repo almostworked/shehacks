@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Sections Example</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+            /* General Body Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #2A2E37;  /* Dark background color */
+            color: white;  /* White text for contrast */
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: #1E2328;  /* Slightly darker background for header */
+            padding: 20px;
+            text-align: left;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            display: flex;
+            justify-content: space-between;
+            padding: 100px;
+        }
+
+        /* Calendar Section - Left Circulated Area */
+        .calendar {
+            background-color: #8A8B97;  /* Color corresponding to the calendar */
+            padding: 20px;
+            border-radius: 10px;
+            width: 65%;
+        }
+
+        /* Sidebar Section - Right Circulated Area */
+        .sidebar {
+            background-color: #4A4E56;  /* Color for the sidebar */
+            padding: 20px;
+            width: 30%;
+            border-radius: 10px;
+        }
+
+        /* Current Goals Section - Color Corresponding to Goals */
+        .current-goals {
+            background-color: #6C7C8B;  /* Slightly different shade for the goals section */
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Friend Activity Section - Color Corresponding to Activity */
+        .friend-activity {
+            background-color: #3E494E;  /* Different shade for friend activity section */
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        /* Footer Section - In Orbit Area */
+        .footer {
+            background-color: #232A32;  /* Dark background for footer */
+            padding: 100px;
+            text-align: center;
+            width: 896px;
+            height:16px;
+        }
+
+        /* In Orbit Section */
+        .in-orbit {
+            background-color: #40454B;  /* Color for 'In Orbit' section */
+            padding: 15px;
+            border-radius: 10px;
+        }
+    </style>
+
+</head>
+<body>
+    <header class="header">
+        <h1>Welcome Back Astronaut! What Will You Do Today?</h1>
+    </header>
+    <section class="main-content">
+        <div class="calendar">
+            <h2>February</h2>
+            <!-- Calendar content goes here -->
+        </div>
+        <div class="sidebar">
+            <div class="current-goals">
+                <h2>Current Goals</h2>
+                <!-- Goals list goes here -->
+            </div>
+            <div class="friend-activity">
+                <h2>Friend Activity</h2>
+                <!-- Friend activity list goes here -->
+            </div>
+        </div>
+    </section>
+    <footer class="footer" style = "text-align: left;">
+        In orbit...
+        <div class="in-orbit">
+            <!-- In orbit section -->
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome/Signin</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Center the button on the page */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: <link rel="stylesheet" href="style.css">;
+        }
+        .move-button { 
+        margin-top: 50px; /* Moves the button down */ 
+        margin-left: 20px; /* Moves the button to the right */ 
+        }
+    
+        button {
+            background-color: aliceblue;
+            color: indigo;
+            border-radius: 10px;
+            height: 60px;
+            width: 400px;
+
+            font-size: 20px;
+            border-color: antiquewhite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        /* Adjust the image size */
+        img {
+            height: 45px;
+            width: 45px;
+        }
+                /* Style for OR text */
+                .or-text {
+            font-size: 18px;
+            color: white;
+            margin-top: 20px;
+        }
+        
+        /* Align OR text to the left */
+        .or-container {
+            display: flex;
+            justify-content: flex-start;
+            width: 100%;
+        }
+
+    </style>
+
+</head>
+<body>
+    <a href="signin.html" target=_self title="Sign In Through Google!">
+        
+    
+        <button
+        style="
+        background-color:aliceblue;
+        color:indigo;
+        border-radius:10px ;
+        height: 60px;
+        width: 400px;
+        font-size: 20px;
+        border-color: antiquewhite;"> 
+        <img src = ".vscode/channels4_profile.jpg" height = 45 width = 45 ></img> Sign in with Google</button>
+    </a>
+    <!-- OR Section -->
+    <div class="or-container">
+        <div class="line"></div>
+        <span class="or-text">--OR--</span>
+        <div class="line"></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+                /* Footer Section - In Orbit Area */
+        .footer {
+            background-color: #232A32;  /* Dark background for footer */
+            padding: 100px;
+            text-align: center;
+            width: 896px;
+            height:16px;
+            margin-top: 500px;
+            margin-left: -10px;
+            color:whitesmoke;
+            font-size: larger;
+        }
+        .progress-container {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        }
+        .progress-bar {
+        width: 80%;
+        height: 20px;
+        background-color: #4a4e57;
+        border-radius: 10px;
+        width: 896px;
+        position: relative;
+        }
+
+        .progress-fill {
+        width: 50%; /* Adjust this percentage to simulate progress */
+        height: 100%;
+        background-color: #8b7fd2;
+        border-radius: 10px;
+        position: absolute;
+        }
+        /* In Orbit Section */
+        .in-orbit {
+            background-color: #40454B;  /* Color for 'In Orbit' section */
+            padding: 15px;
+            border-radius: 10px;
+            width: 896px;
+            height:16px;
+        }
+
+    </style>
+</head>
+<body>
+    <footer class="footer" style = "text-align: left;">
+        <div class="progress-container">
+            <span class="progress-text">In orbit...</span>
+            <div class="progress-bar">
+              <div class="progress-fill"></div>
+            </div>
+          </div>
+    </footer>
+    
+</body>
+</html>
