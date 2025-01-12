@@ -7,13 +7,13 @@ function getUserMonth() {
 }
 
 let selectionMode = false;
-
 function toggleSelectionMode() {
   selectionMode = !selectionMode;
   const button = document.getElementById('toggleSelectionMode');
   button.textContent = selectionMode ? 'finish striking' : 'strike a mission';
 }
 
+/*Load calendar*/
 document.addEventListener('DOMContentLoaded', function() {
   const header = document.getElementById('month');
   header.textContent = getUserMonth();
@@ -27,12 +27,26 @@ document.addEventListener('DOMContentLoaded', function() {
   for (let i = 1; i <= daysInMonth; i++) {
     const square = document.createElement('div');
     square.classList.add('day-square');
+    square.setAttribute('day', i);
     calendar.appendChild(square);
   }
 
   const taskItems = document.querySelectorAll('#taskList li');
   taskItems.forEach(item => {
     makeTaskEditable(item);
+  });
+
+  /*Habit list*/
+  document.getElementById("input").addEventListener("keydown", function(event) {
+    if (event.key == "Enter") {
+      var input = document.getElementById("input").value;
+      if (input.trim() !== "") {
+        var item = document.createElement("li");
+        item.textContent = input;
+        document.getElementById("habits").appendChild(item);
+        document.getElementById("input").value = "";
+      }
+    }
   });
 
   document.getElementById('addTask').addEventListener('keypress', function (event) {
@@ -61,11 +75,23 @@ function addNewTask(taskText) {
   textSpan.className = 'task-text';
   textSpan.textContent = taskText;
 
+  // Create the delete button
+  const deleteButton = document.createElement('button');
+  deleteButton.className = 'delete-btn';
+  deleteButton.textContent = '🗑️'; // Trash can symbol for deleting
+  deleteButton.addEventListener('click', function() {
+    taskList.removeChild(newTask); // Remove the task from the list when clicked
+  });
+
+  // Append the icon, text, and delete button to the new task
   newTask.appendChild(iconSpan);
   newTask.appendChild(textSpan);
+  newTask.appendChild(deleteButton);
+
   makeTaskEditable(newTask);
   taskList.insertBefore(newTask, document.getElementById('addTask'));
 }
+
 
 function makeTaskEditable(taskItem) {
   taskItem.setAttribute('contenteditable', 'true');
@@ -85,4 +111,3 @@ function makeTaskEditable(taskItem) {
 function toggleTaskCompletion(taskItem) {
   taskItem.classList.toggle('completed');
 }
-

@@ -7,6 +7,13 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Display the image here -->
+  <div id="image-container">
+    <img src="./pngs/Vector.png" alt="rocket" width="300" height="200">
+  </div>
+<div>
+  <h1 id="daysonMoon">you have spent 8 days on the moon</h1>
+</div>
   <div id="top_header">
     <div style="display: flex; gap: 0px;">
       <h1>welcome back astronaut!</h1>
@@ -39,9 +46,11 @@
     </div>
     <div id="habitBox">
       <h4>add habit</h4>
-      <input type="text" id="input" placeholder="put on spaceboots...">
-      <button onclick="addHabit()">Add</button>
-      <ol id="habits"</ol>
+      <div id="habitList">
+        <input type="text" id="input" placeholder="put on spaceboots...">
+        <ol id="habits"></ol> 
+      </div>
+      
     </div>
     <div id="missionListContainer">
       <h4>today's missions</h4>
@@ -50,25 +59,27 @@
         <li>
           <span class="icon">🏃</span>
           <span class="task-text">go on a run +1</span>
+          <button class="delete-task">🗑️</button> <!-- Delete button -->
         </li>
         <li>
           <span class="icon">💧</span>
           <span class="task-text">drink 1L of water +2</span>
+          <button class="delete-task">🗑️</button> <!-- Delete button -->
         </li>
         <li>
           <span class="icon">📖</span>
           <span class="task-text">finish homework +2</span>
+          <button class="delete-task">🗑️</button> <!-- Delete button -->
         </li>
         <li class="completed">
           <span class="icon">🧘</span>
           <span class="task-text">practice meditation +1</span>
+          <button class="delete-task">🗑️</button> <!-- Delete button -->
         </li>
         <li id="addTask" contenteditable="true" class="add-task">➕ add a task</li>
       </ul>
-      
     </div>
   </div>
-  
   
   <script src="script.js"></script>
 </body>

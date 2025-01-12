@@ -50,11 +50,6 @@ h2 {
   margin: 50px;
   gap: 20px;
 }
-#month_display {
-  display: flex;
-  align-items:flex-end;
-  gap: 400px;
-}
 /* Month header */
 h3 {
     padding-top: 200px;
@@ -80,13 +75,15 @@ h3 {
   
 }
 .day-square {
-  width: 80px;
-  height: 80px;
+  color: black;
+  width: 70px;
+  height: 70px;
   border-radius: 20px;
   background-color: #D9D9D9;
+  
 }
 .day-square:hover {
-  color:#909090
+  color:#2D3641;
 }
 #addTask {
   width: 100px;
@@ -94,34 +91,28 @@ h3 {
   border-radius: 20px;
 }
 /* Add habit*/
-#habitBox input[type="text"]{
-  font-family: 'AppleGaramond-Light';
-  font-style: italic;
-  font-size: 15px;
-  padding: 20px;
-  font-size: 20px;
-  border-radius: 15px;
-}
-#habits {
-  list-style-type: none;
-
-}
-#habits li {
-  font-size: 20px;
-}
 h4 {
   font-family: 'Inter';
   font-size: 25px;
   color: #ffffff;
 }
-.addBtn {
-  padding: 10px;
-  color: #ffffff8f;
+#input {
+  font-size: 25px;
+  font-family: 'AppleGaramond-Light';
+  font-style: italic;
+  border-radius: 8px;
+  padding: 20px;
+  
 }
-.addBtn:hover {
-  border-radius: 25px;
-  background-color: #bbbbbb46;
-  cursor:pointer;
+#habits {
+  list-style-type: none;
+  color: white;
+  font-size: 30px;
+  
+}
+
+#habitList {
+  align-items: start;
 }
 #toggleSelectionMode {
   display: block;
@@ -136,108 +127,110 @@ h4 {
 }
 
 
-#toggleSelectionMode:hover {
-  background-color: #45a049; /* Darker green on hover */
-}
+  #toggleSelectionMode:hover {
+    background-color: #8163A1; /* Darker green on hover */
+  }
 
 
 #missionListContainer {
   background-color: #5C6C6C;
-  border-radius: 20px;
+  border-radius: 25px;
   width: 25%; 
   padding: 10px;
   right: 100px; 
   top: 200px;
 }
 
-#missionList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-#taskList li {
-  list-style: none;
-  padding: 8px;
-  margin: 0; /* Ensure uniform margins */
+  #missionList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  #taskList li {
+    color: white;
+    list-style: none;
+    padding: 8px;
+    margin: 0; /* Ensure uniform margins */
+    display: flex;
+    align-items: center; /* Align icons and text */
+    width: 100%; /* Force full width alignment */
+    box-sizing: border-box; /* Include padding and borders in the width */
+  }
+
+  .icon {
+    margin-right: 8px;
+    display: inline-block;
+    width: 20px; /* Fix icon width for consistency */
+    text-align: center;
+  }
+
+  .add-task {
+    color: #999;
+    font-style: italic;
+    padding: 8px;
+    width: 100%; /* Ensure it matches the width of other items */
+    border: none; /* Remove any extra borders that could cause misalignment */
+    outline: none; /* Remove outline when editable */
+  }
+  #image-container {
+    position: relative;
+    top: 380px; /* Moves the image down by 500px */
+    left: 100px;
+    display: flex;
+  }
+  #daysonMoon {
+    font-family: 'AppleGaramond-Light';
+  font-size: 25px;
+  position: relative;
+  top: 260px; /* Moves the image down by 500px */
+  left: 200px;
   display: flex;
-  align-items: center; /* Align icons and text */
-  width: 100%; /* Force full width alignment */
-  box-sizing: border-box; /* Include padding and borders in the width */
-}
-
-.icon {
-  margin-right: 8px;
-  display: inline-block;
-  width: 20px; /* Fix icon width for consistency */
-  text-align: center;
-}
-
-
-
-.add-task {
-  color: #999;
-  font-style: italic;
-  padding: 8px;
-  width: 100%; /* Ensure it matches the width of other items */
-  border: none; /* Remove any extra borders that could cause misalignment */
-  outline: none; /* Remove outline when editable */
-}
-
-.add-task:focus {
-  color: white;
-  font-style: normal;
-}
+  color: #ffffff;
+  }
+  #image-container img {
+    width: 100px;
+    height: 100px;
+    display: block; /* Prevents extra space below the image */
+  }
+  .add-task:focus {
+    color: white;
+    font-style: normal;
+  }
 
 #taskList li input {
   margin-left: 10px;
   font-size: 18px;
   padding: 5px;
 }
+.delete-task {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: color 0.3s;
+}
+
+.delete-task:hover {
+  color: red;
+}
+.delete-btn {
+  margin-left: 10px;
+  background: none;
+  border: none;
+  color: red;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  color: darkred;
+}
+
+
 .completed .task-text {
   text-decoration: line-through;
-  color: gray;
-}
-/* Display drop-down menu */
-.disply {
-  width: 138px;
-  height: 119px;
-  background-color: #A5B8D0;
-  border-radius: 20px;
-  
-    /* Align to the bottom */
-}
-.dropdown {
-  
-  top: 20px;  /* This will move the element down */
-  width: 138px;
-  height: 20px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  text-transform: calc(10);
-  background-color: #708DB2;
-  border-radius: 20px;  /* Center horizontally */
-     /* Align to the bottom */
-}
-.img{
-  color:black;
-  position: relative;
-  top: 10px;
-}
-.wd{
-  
-  color:#334359;
-  width:138px;
-  height: 32px;
-  text-align: center;
-  padding-top: -300px;
-  font-size: 30px;
-
-}
-p {
-  font-size: 25px;
-  height: 10px;
-  margin-top: -5px;
-  padding-top: 10px;
-  text-align: center;
+  color: gray; 
 }
 
