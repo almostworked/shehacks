@@ -285,11 +285,22 @@ input[type="color"] {
     color: white;
     font-style: normal;
   }
-
+#taskList li {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
 #taskList li input {
   margin-left: 10px;
   font-size: 18px;
   padding: 5px;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+.task-text {
+  pointer-events: none;
+  user-select: none;
 }
 .delete-task {
   background-color: transparent;
@@ -317,15 +328,32 @@ input[type="color"] {
   color: darkred;
 }
 
-
+.completed {
+  text-decoration: line-through;
+  color: gray;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
 .completed .task-text {
   text-decoration: line-through;
-  color: gray; 
+  color: gray;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  
 }
 
 /* Style for the "Add a new task" button */
 .add-task-button {
   cursor: pointer;  /* Change the cursor to a hand when hovering over the button */
+}
+#addTask {
+  cursor: pointer;
+  outline: none;
+}
+#addTask:focus {
+  outline: none;
 }
 .selection-mode .day-square:hover {
   cursor: pointer;
@@ -337,6 +365,20 @@ input[type="color"] {
 /* Task hover with selection mode */
 .selection-mode #taskList li:hover {
   cursor: pointer;
+}
+#progressBar {
+  width: 60%;
+  height: 50px;
+  border-radius: 15px;
+  background-color: #909090;
+  margin-left: 90px;
+
+}
+#progress {
+  width: 0;
+  height: 10px;
+  background-color: #cd3ae3;
+  border-radius: 5px;
 }
 ::-webkit-scrollbar{
   width: 15px;
