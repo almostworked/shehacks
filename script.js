@@ -31,8 +31,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const square = document.createElement('div');
     square.classList.add('day-square');
     square.setAttribute('day', i);
+    square.textContent = i;
+    square.addEventListener('click', function() {
+      openHabits(i);
+    });
     calendar.appendChild(square);
   }
+
+  // Initialize habit list
+  let habits = [];
 
   // Function to add habits
   document.getElementById("input").addEventListener("keydown", function(event) {
@@ -48,22 +55,73 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const colourInput = document.createElement("input");
         colourInput.type = "color";
+        colourInput.value = "#7E8287"; // Default colour
 
         colourInput.addEventListener("input", function() {
           colourCircle.style.backgroundColor = colourInput.value;
         });
         colourCircle.addEventListener("click", function() {
           colourInput.click();
-        })
+        });
+
         item.appendChild(colourCircle);
         item.appendChild(text);
         item.appendChild(colourInput);
 
+        storeHabit(input, colourInput.value);
         document.getElementById("habits").appendChild(item);
-        document.getElementById("input").value = "";
+        document.getElementById("input").value = ""; // Clear input after adding
       }
     }
-  })
+  });
+
+  // Function to store habit and its color
+  function storeHabit(habitName, color) {
+    habits.push({
+      name: habitName,
+      color: color
+    });
+  }
+
+  // Function to open habit selection popup
+  function openHabits(day) {
+    const popup = document.createElement("div");
+    popup.classList.add("popup");
+
+    const habitList = document.createElement("ol");
+    habits.forEach(function(habit) {
+      const habitItem = document.createElement("li");
+      const colourCircle = document.createElement("div");
+      colourCircle.classList.add("colourOptions");
+      colourCircle.style.backgroundColor = habit.color;
+
+      habitItem.appendChild(colourCircle);
+      habitItem.appendChild(document.createTextNode(habit.name));
+
+      habitItem.addEventListener("click", function() {
+        selectHabit(day, habit.color);
+        document.body.removeChild(popup); // Close the popup
+      });
+
+      habitList.appendChild(habitItem);
+    });
+
+    popup.appendChild(habitList);
+    document.body.appendChild(popup); // Add the popup to the body
+  }
+
+  // Function to select a habit for a day and change the background color
+  function selectHabit(day, color) {
+    console.log('selected colour:', color);
+    const daySquare = document.querySelector(`[day="${day}"]`);
+    if (daySquare) {
+      daySquare.style.backgroundColor = color;
+      daySquare.style.borderColor = color;
+    }
+  }
+
+});
+
   // Add task functionality when 'Enter' is pressed
   document.getElementById('addTask').addEventListener('click', function() {
     addBlankTask();  // Add a blank task input when clicked
@@ -71,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Add toggle selection mode functionality
   document.getElementById('toggleSelectionMode').addEventListener('click', toggleSelectionMode);
-});
+
 
 // Function to add a blank task input (every time clicking 'Add a Task')
 function addBlankTask() {
