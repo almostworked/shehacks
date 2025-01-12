@@ -205,7 +205,7 @@ input:focus {
   position: relative;
   align-items: center;
   top: 265px;
-  margin-left: 16%;
+  margin-left: 73px;
 }
 
 .signupbutton {
@@ -217,7 +217,9 @@ input:focus {
   border: 2px solid #fff;
   border-radius: 5px;
   cursor: pointer;
-  text-align: center;
+  width: 455px;
+
+  /*text-align: center; */
   transition: background-color 0.3s, border-color 0.3s;
 }
 
