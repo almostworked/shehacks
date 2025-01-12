@@ -39,8 +39,26 @@ document.addEventListener('DOMContentLoaded', function() {
     if (event.key == "Enter") {
       var input = document.getElementById("input").value;
       if (input.trim() !== "") {
-        var item = document.createElement("li");
-        item.textContent = input;
+        const item = document.createElement("li");
+        const text = document.createElement("span");
+        text.textContent = input;
+
+        const colourCircle = document.createElement("div");
+        colourCircle.classList.add("colourOptions");
+
+        const colourInput = document.createElement("input");
+        colourInput.type = "color";
+
+        colourInput.addEventListener("input", function() {
+          colourCircle.style.backgroundColor = colourInput.value;
+        });
+        colourCircle.addEventListener("click", function() {
+          colourInput.click();
+        })
+        item.appendChild(colourCircle);
+        item.appendChild(text);
+        item.appendChild(colourInput);
+
         document.getElementById("habits").appendChild(item);
         document.getElementById("input").value = "";
       }

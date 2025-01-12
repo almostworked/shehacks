@@ -105,16 +105,30 @@ h4 {
   padding: 20px;
   
 }
-#habits {
+#habits li {
   list-style-type: none;
   color: white;
   font-size: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   
 }
 
 #habitList {
   align-items: start;
-}#toggleSelectionMode {
+}
+.colourOptions {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: grey;
+  margin-left: 10px;
+}
+input[type="color"] {
+  display: none
+}
+#toggleSelectionMode {
   display: block;
   margin: 10px auto; /* Center horizontally */
   padding: 8px 16px;
