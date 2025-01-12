@@ -13,11 +13,15 @@ function toggleSelectionMode() {
   const button = document.getElementById('toggleSelectionMode');
   button.textContent = selectionMode ? 'finish striking' : 'strike a mission';
 }
-
+let habits = [];
+let completedHabits = 0;
+let totalDaysInMonth = new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0).getDate();
 /* Load calendar */
 document.addEventListener('DOMContentLoaded', function() {
   // Set the month header
   const header = document.getElementById('month');
+  const progress = document.getElementById('progressBase');
+  progress.style.width = '0%';
   header.textContent = getUserMonth();
 
   // Initialize the calendar
@@ -48,10 +52,21 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     calendar.appendChild(square);
   }
+  function updateProgressBar() {
+    const progressFill = document.getElementById('progressFill');
+  
+  // Calculate the percentage of completed habits
+    const progressPercentage = (completedHabits / totalDaysInMonth) * 100;
+  
+  // Ensure the progress percentage is clamped between 0% and 100%
+    const clampedPercentage = Math.min(100, Math.max(0, progressPercentage));
+  
+  // Update the width of the progress bar's fill
+    progressFill.style.width = `${clampedPercentage}%`; // Update fill width based on progress
+  }
 
   // Initialize habit list
-  let habits = [];
-  let completedHabits = 0;
+  
 
   // Function to add habits
   document.getElementById("input").addEventListener("keydown", function(event) {
@@ -59,6 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
       var input = document.getElementById("input").value;
       if (input.trim() !== "") {
         const item = document.createElement("li");
+        
         const text = document.createElement("span");
         text.textContent = input;
 
@@ -133,10 +149,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Function to select a habit for a day and change the background color
   function selectHabit(day, color) {
-    console.log('selected colour:', color);
     const daySquare = document.querySelector(`[day="${day}"]`);
     if (daySquare) {
       daySquare.style.backgroundColor = color;
+      completedHabits++;
+      updateProgressBar();
     }
   }
 
@@ -161,7 +178,7 @@ function addBlankTask() {
   const taskItem = document.createElement('li');
   const inputSpan = document.createElement('span');
   inputSpan.className = 'task-text';
-  inputSpan.textContent = 'New task...'; // Default placeholder text
+  inputSpan.textContent = 'new task...'; // Default placeholder text
   taskItem.appendChild(inputSpan);
 
   const deleteButton = document.createElement('button');

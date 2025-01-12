@@ -43,7 +43,7 @@
     <div id="habitBox">
       <h4>add habit</h4>
       <div id="habitList">
-        <input type="text" id="input" placeholder="put on spaceboots..." autocomplete="off" maxlength="30">
+        <input type="text" id="input" placeholder="prepare for lift off..." autocomplete="off" maxlength="30">
         <ol id="habits"></ol> 
       </div>
     </div>
@@ -78,7 +78,8 @@
   </div>
   <audio id="strikeSound" src="sounds/paper1sec.mp3" preload="auto"></audio>
   <div id="progressBar">
-    <div id="progress" style="height: 10px; background-color: grey; border-radius: 5px;"></div>
+    <div id="progressBase"></div>
+    <div id="progressFill"></div>
   </div>
   
   <script src="script.js"></script>
