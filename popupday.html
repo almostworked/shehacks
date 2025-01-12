@@ -17,6 +17,7 @@
             border-top-left-radius: 30px;
             border-bottom-right-radius: 30px;
             border-bottom-left-radius: 30px;
+            background:linear-gradient(to right,yellow,pink);
         }
         .scontainer{
             height:250px;
@@ -39,15 +40,58 @@
             color:#D9D9D9;
             text-align: center;
         }
+        #pfriend{
+            font-size: 25px;
+            height: 30px;
+            padding-top: 10px;
+            text-align: center;
+            background-color: #47515D;
+            color:#D9D9D9;
+            text-align: center;
+        }
+        .box {
+        border-radius:30%;
+        background:linear-gradient(rgb(238, 39, 39),rgb(223, 129, 223),rgb(223, 184, 112));
+        -webkit-mask: radial-gradient(transparent 5px,#000 5px);
+                mask: radial-gradient(transparent 21px,#000 22px);
+        animation:change 3s linear alternate infinite;
+
+        }
+        .box:before {
+        content:"";
+        display:block;
+        padding:30%;
+
+        }
+
+        .container {
+        margin:0 auto;
+        max-width:200px;
+
+        }
+
+        @keyframes change{
+        to {
+            max-width:200px;
+        }
+        }
+
+
+
     </style>
 </head>
 <body>
     <div class="container">
         <div class="head">
-            <p>Display</p>
+            <p>Friend Activity</p>
         </div>
         <div class=""scontainer">
-
+            <h1 id="pfriend">heyy</h1>
+        </div>
+        <div>
+            <div class="box">
+            <p>John</p>
+            </div>
         </div>
     </div>
 </body>
