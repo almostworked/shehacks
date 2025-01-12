@@ -34,6 +34,18 @@ document.addEventListener('DOMContentLoaded', function() {
     calendar.appendChild(square);
   }
 
+  // Function to add habits
+  document.getElementById("input").addEventListener("keydown", function(event) {
+    if (event.key == "Enter") {
+      var input = document.getElementById("input").value;
+      if (input.trim() !== "") {
+        var item = document.createElement("li");
+        item.textContent = input;
+        document.getElementById("habits").appendChild(item);
+        document.getElementById("input").value = "";
+      }
+    }
+  })
   // Add task functionality when 'Enter' is pressed
   document.getElementById('addTask').addEventListener('click', function() {
     addBlankTask();  // Add a blank task input when clicked
