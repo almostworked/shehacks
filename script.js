@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Initialize habit list
   let habits = [];
+  let completedHabits = 0;
 
   // Function to add habits
   document.getElementById("input").addEventListener("keydown", function(event) {
@@ -141,8 +142,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
+
   // Add task functionality when 'Enter' is pressed
   document.getElementById('addTask').addEventListener('click', function() {
+    this.blur(); // Prevent focus on click
     addBlankTask();  // Add a blank task input when clicked
   });
 
@@ -209,8 +212,13 @@ function makeTaskEditable(taskItem) {
 
 // Toggle task completion (strikethrough effect)
 function toggleTaskCompletion(taskItem) {
-  taskItem.classList.toggle('completed');  // Toggle 'completed' class for strikethrough effect
+  taskItem.classList.toggle('completed');
+  const taskText = taskItem.querySelector('.task-text');
+  if(taskText) {
+    taskText.setAttribute('contenteditable', taskItem.classList.contains('completed') ? 'false' : 'true');
+  }  // Toggle 'completed' class for strikethrough effect
 }
+
 
 // Add the "Add a new task" button at the bottom
 function addAddNewTaskButton() {
@@ -226,6 +234,7 @@ function addAddNewTaskButton() {
     addTaskButton.addEventListener('click', function() {
       addBlankTask();  // Add task when the button is clicked
     });
+    addTaskButton.setAttribute('contenteditable', 'false');
     taskList.appendChild(addTaskButton);
   }
 }
@@ -237,7 +246,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const taskItems = document.querySelectorAll('#taskList li');
   taskItems.forEach(item => {
-    makeTaskEditable(item);  // Reinitialize tasks as editable
+    if(!item.classList.contains('completed')) {
+      makeTaskEditable(item);  // Reinitialize tasks as editable
+
+    }
     const deleteButton = item.querySelector('.delete-task');
     if (deleteButton) {
       deleteButton.addEventListener('click', function() {
