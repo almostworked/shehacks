@@ -35,7 +35,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const dayNumber = document.createElement('span');
     dayNumber.classList.add('day-number');
     dayNumber.textContent = i;
-    
+
+    if (i === today.getDate()) {
+      square.classList.add('today');
+      dayNumber.style.color = "#6A5C7A";
+      square.style.backgroundColor = "#E1D6EC";
+      
+    }
     square.appendChild(dayNumber);
 
     square.addEventListener('click', function() {
