@@ -12,6 +12,10 @@ body {
     background-color: #2D3641;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+}
+html {
+  overflow-x: hidden;
 }
 #top_header {
   font-family: 'AppleGaramond-Light';
@@ -64,7 +68,7 @@ h3 {
   grid-template-columns: repeat(7, 1fr);
   padding: 10px;
   padding-left: 25px;
-  padding-top: 25px;
+  padding-top: 20px;
   margin-left: 50px;
   margin-top: -20px;
   cursor: default;
@@ -104,6 +108,23 @@ h3 {
 .day-square.today .day-number:hover {
   color:#5a495f;
 }
+.popup {
+  z-index: 1000;
+}
+.popup ol {
+  list-style-type: none;
+  color: white;
+}
+.popup li{
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+.popup li:hover {
+  color:#4C545E;
+  cursor: pointer;
+
+}
 #addTask {
   width: 100px;
   height: 50px;
@@ -114,8 +135,19 @@ h3 {
 
 h4 {
   font-family: 'Inter';
-  font-size: 25px;
+  font-size: 35px;
   color: #ffffff;
+}
+#habitBox {
+  padding: 20px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+#habitBox h4 {
+  color: white;
+  margin-bottom: 5px;
 }
 #input {
   font-size: 25px;
@@ -123,15 +155,21 @@ h4 {
   font-style: italic;
   border-radius: 8px;
   padding: 20px;
+  margin-bottom: 15px;
   
 }
-#habits li {
+#habits {
   list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+#habits li {
   color: white;
   font-size: 25px;
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-left: 0;
   
 }
 #habitList {
@@ -179,6 +217,7 @@ input[type="color"] {
   border-radius: 25px;
   width: 25%; 
   padding: 10px;
+  margin: 0;
   right: 100px; 
   top: 200px;
 }
@@ -296,7 +335,7 @@ input[type="color"] {
 }
 ::-webkit-scrollbar-thumb{
   background: linear-gradient(#cd3ae3, #5a42bb, #16166b);
-  border-radius: 30px;
+  border-radius: 4px;
   box-shadow: inset 2px 2px 2px rgba(255,255,255,.25);
 }
 ::-webkit-scrollbar-track{
