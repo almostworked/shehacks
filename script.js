@@ -38,7 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (i === today.getDate()) {
       square.classList.add('today');
-      dayNumber.style.color = "#6A5C7A";
       square.style.backgroundColor = "#E1D6EC";
       
     }
