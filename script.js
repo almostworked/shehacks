@@ -75,11 +75,23 @@ function addNewTask(taskText) {
   textSpan.className = 'task-text';
   textSpan.textContent = taskText;
 
+  // Create the delete button
+  const deleteButton = document.createElement('button');
+  deleteButton.className = 'delete-btn';
+  deleteButton.textContent = '🗑️'; // Trash can symbol for deleting
+  deleteButton.addEventListener('click', function() {
+    taskList.removeChild(newTask); // Remove the task from the list when clicked
+  });
+
+  // Append the icon, text, and delete button to the new task
   newTask.appendChild(iconSpan);
   newTask.appendChild(textSpan);
+  newTask.appendChild(deleteButton);
+
   makeTaskEditable(newTask);
   taskList.insertBefore(newTask, document.getElementById('addTask'));
 }
+
 
 function makeTaskEditable(taskItem) {
   taskItem.setAttribute('contenteditable', 'true');
@@ -99,4 +111,3 @@ function makeTaskEditable(taskItem) {
 function toggleTaskCompletion(taskItem) {
   taskItem.classList.toggle('completed');
 }
-
