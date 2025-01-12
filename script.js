@@ -161,7 +161,7 @@ function addBlankTask() {
   const taskItem = document.createElement('li');
   const inputSpan = document.createElement('span');
   inputSpan.className = 'task-text';
-  inputSpan.textContent = 'New task...'; // Default placeholder text
+  inputSpan.textContent = 'new task...'; // Default placeholder text
   taskItem.appendChild(inputSpan);
 
   const deleteButton = document.createElement('button');
