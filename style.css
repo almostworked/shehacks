@@ -69,12 +69,15 @@ h3 {
   margin-left: 50px;
   margin-top: -20px;
   cursor: default;
-  width: 700px;
-  height: 530px;
+  width: 600px;
+  height: 400px;
   border-radius: 25px;
   
 }
 .day-square {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 70px;
   height: 70px;
   border-radius: 20px;
@@ -83,6 +86,20 @@ h3 {
 }
 .day-square:hover {
   color:#2D3641;
+}
+.day-number {
+  visibility: hidden;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.day-square:hover .day-number {
+  visibility: visible;
+  opacity: 1;
 }
 #addTask {
   width: 100px;
@@ -279,3 +296,4 @@ input[type="color"] {
 }
 ::-webkit-scrollbar-track{
   background-color: rgb(108, 106, 106);
+}

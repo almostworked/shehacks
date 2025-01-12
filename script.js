@@ -31,7 +31,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const square = document.createElement('div');
     square.classList.add('day-square');
     square.setAttribute('day', i);
-    square.textContent = i;
+
+    const dayNumber = document.createElement('span');
+    dayNumber.classList.add('day-number');
+    dayNumber.textContent = i;
+    
+    square.appendChild(dayNumber);
+
     square.addEventListener('click', function() {
       openHabits(i);
     });
@@ -68,7 +74,10 @@ document.addEventListener('DOMContentLoaded', function() {
         item.appendChild(text);
         item.appendChild(colourInput);
 
-        storeHabit(input, colourInput.value);
+        colourInput.addEventListener("change", function() {
+          storeHabit(input, colourInput.value);
+        });
+
         document.getElementById("habits").appendChild(item);
         document.getElementById("input").value = ""; // Clear input after adding
       }
@@ -77,10 +86,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Function to store habit and its color
   function storeHabit(habitName, color) {
-    habits.push({
-      name: habitName,
-      color: color
-    });
+    const habitIndex = habits.findIndex(h => h.name === habitName);
+    if (habitIndex != -1) {
+      habits[habitIndex].color = color;
+    } else {
+      habits.push({
+        name: habitName,
+        color: color
+      });
+    }
+
   }
 
   // Function to open habit selection popup
@@ -116,7 +131,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const daySquare = document.querySelector(`[day="${day}"]`);
     if (daySquare) {
       daySquare.style.backgroundColor = color;
-      daySquare.style.borderColor = color;
     }
   }
 
