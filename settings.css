@@ -27,11 +27,11 @@ section {
 
 .settingsTitle {
     position: absolute;
-    top: 10%;
+    top: 120px;
     left: 5%;
     color: white;
-    font-family: 'Arial', sans-serif;
-    font-size: 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 26px;
     font-weight: 550;
 }
 
@@ -49,12 +49,16 @@ section {
 
 .username {
     top: 25%;
-    left: 2%;
+    font-family: 'Inter', sans-serif;
+
+    left: 100px;
 }
 
 .password {
     top: 35%;
-    left: 2%;
+    left: 100px;
+    font-family: 'Inter', sans-serif;
+
 }
 
 .field-container label {
@@ -84,13 +88,12 @@ input:focus {
 
 .change-button {
     background-color: transparent;
-    color: white;
+    color: #909090;
     border: none;
     font-size: 14px; /* Slightly smaller */
     cursor: pointer;
-    text-decoration: underline;
     position: absolute;
-    bottom: -5px; /* Position at the bottom of the input */
+    bottom: -10px; /* Position at the bottom of the input */
     right: 0; /* Align to the right side */
     transition: color 0.3s;
 }
@@ -125,28 +128,28 @@ input:focus {
 
 .notificationHeader {
     position: absolute;
-    top: 45%;
+    top: 350px;
     left: 5%;
     color: white;
-    font-family: 'Arial', sans-serif;
-    font-size: 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 26px;
     font-weight: 550;
 }
 
 .socialHeader {
     position: absolute;
-    top: 62%;
+    top: 465px;
     left: 5%;
     color: white;
     font-family: 'Arial', sans-serif;
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 550;
 }
 
 .notification-description {
     position: absolute;
-    top: 50%;
-    left: 5%;
+    top: 400px;
+    left: 100px;
     color: white;
     font-family: 'Arial', sans-serif;
     font-size: 17px;
@@ -156,8 +159,8 @@ input:focus {
 
 .social-description {
     position: absolute;
-    top: 66%;
-    left: 5%;
+    top: 510px;
+    left: 100px;
     color: white;
     font-family: 'Arial', sans-serif;
     font-size: 17px;
@@ -174,18 +177,18 @@ input:focus {
 }
 
 .notification-switch-container {
-    top: 53.5%;
-    right: 5%;
+    top: 435px;
+    left: 550px;
 }
 
 .social-switch-container {
-    top: 71%; /* Adjust as needed to position the social toggle */
-    right: 5%;
+    top: 538px;
+    left: 550px;
 }
 
 .toggle-wrapper {
     display: inline-block;
-    background-color: #ccc;
+    background-color: #bebebe;
     border-radius: 30px;
     padding: 5px 20px;
     display: flex;
@@ -202,7 +205,7 @@ input:focus {
     cursor: pointer;
     width: 60px; 
     height: 30px; 
-    background-color: #ccc; 
+    background-color: #bebebe; 
     border-radius: 50px; 
     transition: background-color 0.3s ease;
     box-sizing: border-box;
