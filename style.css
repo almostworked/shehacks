@@ -88,18 +88,18 @@ h3 {
   color:#2D3641;
 }
 .day-number {
-  visibility: hidden;
+  color:#2d36415a;
   font-size: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  opacity: 1;
+  transition: 0.3s ease-in-out;
 }
 .day-square:hover .day-number {
-  visibility: visible;
-  opacity: 1;
+  color:#2D3641;
+
 }
 #addTask {
   width: 100px;
