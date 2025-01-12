@@ -11,46 +11,38 @@
   <div id="image-container">
     <img src="./pngs/Vector.png" alt="rocket" width="300" height="200">
   </div>
-<div>
-  <h1 id="daysonMoon">you have spent 8 days on the moon</h1>
-</div>
+  <div>
+    <h1 id="daysonMoon">you have spent 8 days on the moon</h1>
+  </div>
   <div id="top_header">
     <div style="display: flex; gap: 0px;">
       <h1>welcome back astronaut!</h1>
       <h2>what will you do today?</h2>
+
+      <!-- Icons on the right -->
+      <div id="icons-container" style="position: absolute; top: 50%; left: 95%; transform: translate(-50%, -50%); display: flex; gap: 15px;">
+        <img src="pngs/bar-graph.228x256.png" alt="leaderboard" width="30" height="30">
+        <!-- Make the settings icon a button -->
+        <button id="settingsButton" style="background: none; border: none; padding: 0;">
+            <img src="pngs/settings.245x256.png" alt="settings" width="30" height="30">
+        </button>
+        <img src="pngs/people.256x203.png" alt="friend-activity" width="42" height="30">
+      </div>        
     </div>
   </div>
   <div id="month_display">
     <h3 id="month"></h3>
-   <!---- 
-   <section>
-      <div class="disply" style="margin-top: 20px;">
-          <p>Display</p>
-          <div class="dropdown">
-              <img src=".pngs/pngegg.png" height="35" width="35" alt="Dropdown image" style="margin-top: -10px; ">
-          </img>
-          </div>
-          <div class="wd">
-              <p>week</p>
-          </div>
-      </div>
-  </section>
--->
   </div>
-  
   
   <!-- Main container for calendar and goals -->
   <div id="mainContainer">
-    <div id="calendar">
-      
-    </div>
+    <div id="calendar"></div>
     <div id="habitBox">
       <h4>add habit</h4>
       <div id="habitList">
         <input type="text" id="input" placeholder="put on spaceboots...">
         <ol id="habits"></ol> 
       </div>
-      
     </div>
     <div id="missionListContainer">
       <h4>today's missions</h4>
@@ -59,22 +51,22 @@
         <li>
           <span class="icon">🏃</span>
           <span class="task-text">go on a run +1</span>
-          <button class="delete-task">🗑️</button> <!-- Delete button -->
+          <button class="delete-task">🗑️</button>
         </li>
         <li>
           <span class="icon">💧</span>
           <span class="task-text">drink 1L of water +2</span>
-          <button class="delete-task">🗑️</button> <!-- Delete button -->
+          <button class="delete-task">🗑️</button>
         </li>
         <li>
           <span class="icon">📖</span>
           <span class="task-text">finish homework +2</span>
-          <button class="delete-task">🗑️</button> <!-- Delete button -->
+          <button class="delete-task">🗑️</button>
         </li>
         <li class="completed">
           <span class="icon">🧘</span>
           <span class="task-text">practice meditation +1</span>
-          <button class="delete-task">🗑️</button> <!-- Delete button -->
+          <button class="delete-task">🗑️</button>
         </li>
         <li id="addTask" contenteditable="true" class="add-task">➕ add a task</li>
       </ul>
@@ -83,5 +75,4 @@
   
   <script src="script.js"></script>
 </body>
-
 </html>

@@ -1,4 +1,9 @@
-// Get the user's current month for the month header
+document.getElementById('settingsButton').addEventListener('click', function() {
+  // Redirect to the settings page (settings.html)
+  window.location.href = 'settings.html';
+});
+
+// Other existing code for month display, task management, etc.
 function getUserMonth() {
   const months = [
     "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
@@ -13,7 +18,7 @@ function toggleSelectionMode() {
   button.textContent = selectionMode ? 'finish striking' : 'strike a mission';
 }
 
-/*Load calendar*/
+/* Load calendar */
 document.addEventListener('DOMContentLoaded', function() {
   const header = document.getElementById('month');
   header.textContent = getUserMonth();
@@ -36,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
     makeTaskEditable(item);
   });
 
-  /*Habit list*/
+  /* Habit list */
   document.getElementById("input").addEventListener("keydown", function(event) {
     if (event.key == "Enter") {
       var input = document.getElementById("input").value;
@@ -92,7 +97,6 @@ function addNewTask(taskText) {
   taskList.insertBefore(newTask, document.getElementById('addTask'));
 }
 
-
 function makeTaskEditable(taskItem) {
   taskItem.setAttribute('contenteditable', 'true');
   taskItem.addEventListener('click', function() {
@@ -111,3 +115,4 @@ function makeTaskEditable(taskItem) {
 function toggleTaskCompletion(taskItem) {
   taskItem.classList.toggle('completed');
 }
+
