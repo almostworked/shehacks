@@ -55,10 +55,8 @@ document.addEventListener('DOMContentLoaded', function() {
   function updateProgressBar() {
     const progressFill = document.getElementById('progressFill');
   
-  // Calculate the percentage of completed habits
     const progressPercentage = (completedHabits / totalDaysInMonth) * 100;
   
-  // Ensure the progress percentage is clamped between 0% and 100%
     const clampedPercentage = Math.min(100, Math.max(0, progressPercentage));
   
   // Update the width of the progress bar's fill
