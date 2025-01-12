@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🚀 dire</title>
+  <title>dire 🚀</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,19 +14,21 @@
   <div>
     <h1 id="daysonMoon">you have spent 8 days on the moon</h1>
   </div>
-  <div id="top_header">
+  <div id="top_header" style="display: flex; justify-content: space-betweena; align-items: center;">
     <div style="display: flex; gap: 0px;">
       <h1>welcome back astronaut!</h1>
       <h2>what will you do today?</h2>
 
       <!-- Icons on the right -->
-      <div id="icons-container" style="position: absolute; top: 50%; left: 95%; display: flex; gap: 15px;">
-        <img src="pngs/bar-graph.228x256.png" alt="leaderboard" width="30" height="30">
+      <div id="icons-container" style="display: flex; gap: 20px; align-items: center;">
+        <img src="pngs/bar-graph.228x256.png" alt="leaderboard" width="30" height="30" margin="0">
         <!-- Make the settings icon a button -->
-        <button id="settingsButton" style="background: none; border: none; padding: 0;">
-            <img src="pngs/settings.245x256.png" alt="settings" width="30" height="30">
-        </button>
-        <img src="pngs/people.256x203.png" alt="friend-activity" width="42" height="30">
+         <div style="display: flex; justify-content: center; align-items: center;">
+          <a href="settings.html" style="width: 30px; height: 30px; display: inline-block;">
+            <img src="pngs/settings.245x256.png" alt="settings" style="width: 100%; height: 100%; margin: 0;">
+          </a>
+         </div>
+        <img src="pngs/people.256x203.png" alt="friend-activity" width="42" height="30" margin="0">
       </div>        
     </div>
   </div>
@@ -50,22 +52,22 @@
       <ul id="taskList">
         <li>
           <span class="icon">🏃</span>
-          <span class="task-text">chase aliens</span>
+          <span class="task-text">go on a run +1</span>
           <button class="delete-task">🗑️</button>
         </li>
         <li>
           <span class="icon">💧</span>
-          <span class="task-text">drink 1L of space juice</span>
+          <span class="task-text">drink 1L of water +2</span>
           <button class="delete-task">🗑️</button>
         </li>
         <li>
           <span class="icon">📖</span>
-          <span class="task-text">finish glorb homework</span>
+          <span class="task-text">finish homework +2</span>
           <button class="delete-task">🗑️</button>
         </li>
         <li class="completed">
           <span class="icon">🧘</span>
-          <span class="task-text">practice levitation</span>
+          <span class="task-text">practice meditation +1</span>
           <button class="delete-task">🗑️</button>
         </li>
         <li id="addTask" class="add-task-button">➕ add a task</li>
