@@ -11,18 +11,18 @@
 
     <!-- Title -->
     <div class="settingsTitle">
-      <p>settings</p>
+      <p>Settings</p>
     </div>
 
     <!-- Username Field -->
     <div class="field-container username">
-      <label for="username-display">username</label>
+      <label for="username-display">Username</label>
       <input type="text" id="username-display" placeholder="N/A" readonly>
     </div>
 
     <!-- Password Field -->
     <div class="field-container password">
-      <label for="password-display">password</label>
+      <label for="password-display">Password</label>
       <div class="password-field">
         <input type="password" id="password-display" placeholder="N/A" readonly>
         <button type="button" id="toggle-password" onclick="togglePassword()">👁️</button>
@@ -34,14 +34,36 @@
       <span class="change-text" id="change-btn" onclick="toggleEdit()">Change</span>
     </div>
 
-     <!-- Notifications Header -->
-     <div class="notificationHeader">
-        <p>notifications</p>
+    <!-- Notifications Header -->
+    <div class="notificationHeader">
+      <p>Notifications</p>
+    </div>
+
+    <!-- Notifications Description -->
+    <div class="notification-description">
+      <p>Send daily notifications on habits</p>
+    </div>
+
+    <!-- Notifications Toggle Switch -->
+    <div class="notification-switch-container">
+      <div class="toggle-wrapper">
+        <label class="switch">
+          <input type="checkbox" id="notification-toggle" onclick="toggleNotification()">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Social Header -->
+    <div class="socialHeader">
+        <p>Social</p>
       </div>
 
-      <div class= "notificationText">
-        <p>send daily notifications on habits</p>
+      <!-- Social Description -->
+    <div class="social-description">
+        <p>share habits with friends</p>
       </div>
+
 
   </section>
 
@@ -57,45 +79,21 @@
       
       document.getElementById('password-display').value = password || '';
       document.getElementById('password-display').placeholder = password ? '' : 'N/A';
+
+      // Set notification switch state
+      const isEnabled = localStorage.getItem('sendDailyNotifications') === 'true';
+      document.getElementById('notification-toggle').checked = isEnabled;
     };
 
-    // Toggle editing for username and password
-    function toggleEdit() {
-      const usernameInput = document.getElementById('username-display');
-      const passwordInput = document.getElementById('password-display');
-      const changeButton = document.getElementById('change-btn');
-
-      // Toggle the readonly state for username and password
-      if (usernameInput.readOnly && passwordInput.readOnly) {
-        usernameInput.readOnly = false;
-        passwordInput.readOnly = false;
-        usernameInput.focus();
-        changeButton.textContent = 'Save';
+    // Toggle the setting for daily notifications
+    function toggleNotification() {
+      const isChecked = document.getElementById('notification-toggle').checked;
+      if (isChecked) {
+        console.log("Daily notifications enabled.");
+        localStorage.setItem('sendDailyNotifications', 'true');
       } else {
-        // Save changes and disable editing
-        const newUsername = usernameInput.value;
-        const newPassword = passwordInput.value;
-
-        localStorage.setItem('userEmail', newUsername);
-        localStorage.setItem('userPassword', newPassword);
-
-        usernameInput.readOnly = true;
-        passwordInput.readOnly = true;
-        changeButton.textContent = 'Change';
-      }
-    }
-
-    // Toggle password visibility
-    function togglePassword() {
-      const passwordInput = document.getElementById('password-display');
-      const passwordToggleBtn = document.getElementById('toggle-password');
-
-      if (passwordInput.type === 'password') {
-        passwordInput.type = 'text'; // Show password
-        passwordToggleBtn.textContent = '🙈'; // Change icon
-      } else {
-        passwordInput.type = 'password'; // Hide password
-        passwordToggleBtn.textContent = '👁️'; // Change icon back
+        console.log("Daily notifications disabled.");
+        localStorage.setItem('sendDailyNotifications', 'false');
       }
     }
   </script>

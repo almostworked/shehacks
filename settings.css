@@ -1,7 +1,7 @@
 html, body {
     height: 100%;
     margin: 0;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 section {
@@ -11,8 +11,8 @@ section {
     justify-content: flex-start;
     min-height: 100vh;
     width: 100%;
-    position: relative; 
-    padding-top: 200px; /* Added padding to move down content below the settings header */
+    position: relative;
+    padding-top: 200px;
 }
 
 .greyBG {
@@ -22,17 +22,17 @@ section {
     width: 100%;
     height: 100%;
     background: rgba(45, 54, 65, 1);
-    z-index: -1; 
+    z-index: -1;
 }
 
-.settingsTitle { 
+.settingsTitle {
     position: absolute;
-    top: 10%; 
-    left: 5%; 
+    top: 10%;
+    left: 5%;
     color: white;
     font-family: 'Arial', sans-serif;
     font-size: 24px;
-    font-weight: 550;   
+    font-weight: 550;
 }
 
 .field-container {
@@ -44,29 +44,29 @@ section {
     font-size: 17px;
     font-weight: 550;
     width: 400px;
-    margin-bottom: 20px; /* Spacing between fields */
+    margin-bottom: 20px;
 }
 
 .username {
-    top: 25%; 
+    top: 25%;
     left: 5%;
 }
 
 .password {
-    top: 35%; 
+    top: 35%;
     left: 5%;
 }
 
 .field-container label {
-    margin-right: 15px; /* Space between label and input */
+    margin-right: 15px;
 }
 
 .field-container input {
-    flex-grow: 1; /* Allow the input to expand to fill space */
+    flex-grow: 1;
     padding: 10px;
     font-size: 16px;
     color: white;
-    background: rgba(255, 255, 255, 0.2); 
+    background: rgba(255, 255, 255, 0.2);
     border: none;
     border-radius: 5px;
     outline: none;
@@ -77,11 +77,10 @@ section {
 }
 
 input:focus {
-    border: 2px solid white; 
+    border: 2px solid white;
     outline: none;
 }
 
-/* Styling for the text-based 'change' button */
 .change-text {
     margin-left: 15px;
     font-size: 16px;
@@ -95,17 +94,16 @@ input:focus {
     color: #f0f0f0;
 }
 
-/* Password visibility toggle */
 .password-field {
     position: relative;
     width: 100%;
     display: flex;
     align-items: center;
-    margin-bottom: 10px; /* Add some space below the password field */
+    margin-bottom: 10px;
 }
 
 .password-field input {
-    flex-grow: 1; /* Allow the input to expand */
+    flex-grow: 1;
 }
 
 .password-field button {
@@ -122,20 +120,102 @@ input:focus {
 
 .notificationHeader {
     position: absolute;
-    top: 45%; 
-    left: 5%; 
+    top: 45%;
+    left: 5%;
     color: white;
     font-family: 'Arial', sans-serif;
     font-size: 24px;
-    font-weight: 550;   
+    font-weight: 550;
 }
 
-.notificationText {
+.socialHeader {
     position: absolute;
-    top: 50%; 
-    left: 5%; 
+    top: 62%;
+    left: 5%;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    font-weight: 550;
+}
+
+.notification-description {
+    position: absolute;
+    top: 50%;
+    left: 5%;
     color: white;
     font-family: 'Arial', sans-serif;
     font-size: 17px;
-    font-weight: 550;   
+    font-weight: 550;
+    margin-top: 20px;
+}
+
+.social-description {
+    position: absolute;
+    top: 66%;
+    left: 5%;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    font-size: 17px;
+    font-weight: 550;
+    margin-top: 20px;
+}
+
+
+.notification-switch-container {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 53.5%;
+    right: 5%;
+    padding-left: 10px;
+    color: white;
+}
+
+.toggle-wrapper {
+    display: inline-block;
+    background-color: #ccc;
+    border-radius: 30px;
+    padding: 5px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.switch {
+    display: inline-block;
+}
+
+.switch .slider {
+    position: relative;
+    cursor: pointer;
+    width: 60px; 
+    height: 30px; 
+    background-color: #ccc; 
+    border-radius: 50px; 
+    transition: background-color 0.3s ease;
+    box-sizing: border-box;
+    padding: 5px; 
+}
+
+.switch .slider:before {
+    content: "";
+    position: absolute;
+    height: 20px; /* Circle size */
+    width: 20px; /* Circle size */
+    border-radius: 50%;
+    left: -15px; /* Circle alignment inside the slider */
+    top: 5px; /* Circle alignment inside the slider */
+    background-color: white;
+    transition: transform 0.3s ease;
+}
+
+/* Hide the actual checkbox but keep it functional */
+.switch input {
+    opacity: 0; /* Make the checkbox invisible */
+    position: absolute; /* Remove it from layout */
+    z-index: -1; /* Ensure it doesn't interfere with clicks */
+}
+
+.switch input:checked + .slider:before {
+    transform: translateX(20px); /* Move the circle to the right */
 }
