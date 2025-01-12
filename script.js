@@ -1,9 +1,4 @@
-document.getElementById('settingsButton').addEventListener('click', function() {
-  // Redirect to the settings page (settings.html)
-  window.location.href = 'settings.html';
-});
-
-// Other existing code for month display, task management, etc.
+// Get the user's current month for the month header
 function getUserMonth() {
   const months = [
     "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
@@ -12,6 +7,7 @@ function getUserMonth() {
 }
 
 let selectionMode = false;
+
 function toggleSelectionMode() {
   selectionMode = !selectionMode;
   const button = document.getElementById('toggleSelectionMode');
@@ -20,9 +16,11 @@ function toggleSelectionMode() {
 
 /* Load calendar */
 document.addEventListener('DOMContentLoaded', function() {
+  // Set the month header
   const header = document.getElementById('month');
   header.textContent = getUserMonth();
 
+  // Initialize the calendar
   const calendar = document.getElementById('calendar');
   const today = new Date();
   const year = today.getFullYear();
@@ -36,83 +34,114 @@ document.addEventListener('DOMContentLoaded', function() {
     calendar.appendChild(square);
   }
 
-  const taskItems = document.querySelectorAll('#taskList li');
-  taskItems.forEach(item => {
-    makeTaskEditable(item);
+  // Add task functionality when 'Enter' is pressed
+  document.getElementById('addTask').addEventListener('click', function() {
+    addBlankTask();  // Add a blank task input when clicked
   });
 
-  /* Habit list */
-  document.getElementById("input").addEventListener("keydown", function(event) {
-    if (event.key == "Enter") {
-      var input = document.getElementById("input").value;
-      if (input.trim() !== "") {
-        var item = document.createElement("li");
-        item.textContent = input;
-        document.getElementById("habits").appendChild(item);
-        document.getElementById("input").value = "";
-      }
-    }
-  });
-
-  document.getElementById('addTask').addEventListener('keypress', function (event) {
-    if (event.key === 'Enter') {
-      event.preventDefault();
-      const taskText = this.textContent.trim();
-      if (taskText !== '➕ add a task' && taskText !== '') {
-        addNewTask(taskText);
-        this.textContent = '➕ add a task';
-      }
-    }
-  });
-
+  // Add toggle selection mode functionality
   document.getElementById('toggleSelectionMode').addEventListener('click', toggleSelectionMode);
 });
 
-function addNewTask(taskText) {
+// Function to add a blank task input (every time clicking 'Add a Task')
+function addBlankTask() {
   const taskList = document.getElementById('taskList');
-  const newTask = document.createElement('li');
 
-  const iconSpan = document.createElement('span');
-  iconSpan.className = 'icon';
-  iconSpan.textContent = '📝';
+  // Create a new blank task input
+  const taskItem = document.createElement('li');
+  const inputSpan = document.createElement('span');
+  inputSpan.className = 'task-text';
+  inputSpan.textContent = 'New task...'; // Default placeholder text
+  taskItem.appendChild(inputSpan);
 
-  const textSpan = document.createElement('span');
-  textSpan.className = 'task-text';
-  textSpan.textContent = taskText;
-
-  // Create the delete button
   const deleteButton = document.createElement('button');
-  deleteButton.className = 'delete-btn';
-  deleteButton.textContent = '🗑️'; // Trash can symbol for deleting
+  deleteButton.className = 'delete-task';
+  deleteButton.textContent = '🗑️';
   deleteButton.addEventListener('click', function() {
-    taskList.removeChild(newTask); // Remove the task from the list when clicked
+    taskItem.remove();  // Remove task on delete
   });
 
-  // Append the icon, text, and delete button to the new task
-  newTask.appendChild(iconSpan);
-  newTask.appendChild(textSpan);
-  newTask.appendChild(deleteButton);
+  taskItem.appendChild(deleteButton);
 
-  makeTaskEditable(newTask);
-  taskList.insertBefore(newTask, document.getElementById('addTask'));
+  // Call function to initialize the task with editability and strike-through ability
+  makeTaskEditable(taskItem);  
+  taskList.insertBefore(taskItem, document.getElementById('addTask'));  // Add the new task before the "Add a new task" button
+
+  // Ensure the "Add a new task" button remains at the bottom
+  addAddNewTaskButton();
 }
 
+// Make tasks editable and enable strike-through functionality
 function makeTaskEditable(taskItem) {
   taskItem.setAttribute('contenteditable', 'true');
+  
+  // Ensure that the delete button is not editable
+  const deleteButton = taskItem.querySelector('.delete-task');
+  if (deleteButton) {
+    deleteButton.setAttribute('contenteditable', 'false');
+  }
+
+  // Allow striking through tasks when clicked in selection mode
   taskItem.addEventListener('click', function() {
     if (selectionMode) {
-      toggleTaskCompletion(taskItem);
+      toggleTaskCompletion(taskItem);  // Toggle strikethrough when selection mode is active
     }
   });
-  taskItem.addEventListener('keypress', function (event) {
+
+  // Ensure the task is not editable once 'Enter' key is pressed
+  taskItem.addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
       event.preventDefault();
-      taskItem.blur();
+      taskItem.blur();  // Exit editing mode on Enter key
+
+      // After editing, add a new "Add a new task" button
+      addAddNewTaskButton();
     }
   });
 }
 
+// Toggle task completion (strikethrough effect)
 function toggleTaskCompletion(taskItem) {
-  taskItem.classList.toggle('completed');
+  taskItem.classList.toggle('completed');  // Toggle 'completed' class for strikethrough effect
 }
 
+// Add the "Add a new task" button at the bottom
+function addAddNewTaskButton() {
+  const taskList = document.getElementById('taskList');
+  
+  // Ensure there's only one "Add a new task" button
+  let existingAddTaskButton = document.getElementById('addTask');
+  if (!existingAddTaskButton) {
+    const addTaskButton = document.createElement('li');
+    addTaskButton.id = 'addTask';
+    addTaskButton.textContent = '➕ Add a new task';
+    addTaskButton.className = 'add-task-button';  // Add a class to style the button
+    addTaskButton.addEventListener('click', function() {
+      addBlankTask();  // Add task when the button is clicked
+    });
+    taskList.appendChild(addTaskButton);
+  }
+}
+
+// Reinitialize tasks when the page is loaded to allow for new tasks to be editable
+document.addEventListener('DOMContentLoaded', function() {
+  // Initial "Add a new task" button
+  addAddNewTaskButton();
+
+  const taskItems = document.querySelectorAll('#taskList li');
+  taskItems.forEach(item => {
+    makeTaskEditable(item);  // Reinitialize tasks as editable
+    const deleteButton = item.querySelector('.delete-task');
+    if (deleteButton) {
+      deleteButton.addEventListener('click', function() {
+        item.remove();  // Ensure old tasks are deletable
+      });
+    }
+  });
+});
+const toggleButton = document.getElementById('toggleSelectionMode');
+const body = document.body;
+
+toggleButton.addEventListener('click', () => {
+  body.classList.toggle('selection-mode');
+});
