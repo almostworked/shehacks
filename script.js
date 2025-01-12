@@ -176,7 +176,7 @@ function addBlankTask() {
   const taskItem = document.createElement('li');
   const inputSpan = document.createElement('span');
   inputSpan.className = 'task-text';
-  inputSpan.textContent = 'New task...'; // Default placeholder text
+  inputSpan.textContent = 'new task...'; // Default placeholder text
   taskItem.appendChild(inputSpan);
 
   const deleteButton = document.createElement('button');
@@ -279,3 +279,24 @@ const body = document.body;
 toggleButton.addEventListener('click', () => {
   body.classList.toggle('selection-mode');
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Select all delete-task buttons
+  const deleteButtons = document.querySelectorAll('.delete-task');
+
+  // Access the audio element
+  const strikeSound = document.getElementById('strikeSound');
+
+  // Add event listeners to each delete button
+  deleteButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      // Play the sound
+      strikeSound.play();
+
+      // Remove the task
+      const task = button.closest('li');
+      task.remove();
+    });
+  });
+});
+
