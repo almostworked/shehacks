@@ -1,45 +1,126 @@
-<!DOCTYPE html> <!--main page-->
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Website</title>
-  <hr>
+  <title>Dire</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .disply {
+        width: 138px;
+        height: 119px;
+        background-color: #A5B8D0;
+        border-radius: 20px;
+        
+          /* Align to the bottom */
+    }
+    .dropdown {
+        
+        top: 20px;  /* This will move the element down */
+        width: 138px;
+        height: 20px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        text-transform: calc(10);
+        background-color: #708DB2;
+        border-radius: 20px;  /* Center horizontally */
+           /* Align to the bottom */
+    }
+    .img{
+        color:black;
+        position: relative;
+        top: 10px;
+    }
+    .wd{
+        
+        color:#334359;
+        width:138px;
+        height: 32px;
+        text-align: center;
+        padding-top: -300px;
+        font-size: 30px;
+
+    }
+    p {
+        font-size: 25px;
+        height: 10px;
+        margin-top: -5px;
+        padding-top: 10px;
+        text-align: center;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Welcome back astronaut! What will you do today?</h1>
-  <p>This is my first website!</p>
-  <button id="clickMe">Click Me</button>
+  <div id="top_header">
+    <div style="display: flex; gap: 0px;">
+      <h1>welcome back astronaut!</h1>
+      <h2>what will you do today?</h2>
+    </div>
+  </div>
+  <h3 id="month"></h3>
+  
+  <!-- Main container for calendar and goals -->
+  <div id="mainContainer">
+    <div id="calendar"></div>
+    <div id="habits">
+      <h4>add habit</h4>
+      <input type="text" id="input" placeholder="put on spaceboots...">
+      <span onclick="newElement()" class="addBtn">add</span>
+    </div>
+    <div id="missionListContainer">
+      <h5>current goals</h5>
+      <ul id="taskList">
+        <li>
+          <span class="icon">🏃</span>
+          <span class="task-text">go on a run +1</span>
+        </li>
+        <li>
+          <span class="icon">💧</span>
+          <span class="task-text">drink 1L of water +2</span>
+        </li>
+        <li>
+          <span class="icon">📖</span>
+          <span class="task-text">finish homework +2</span>
+        </li>
+        <li class="completed">
+          <span class="icon">🧘</span>
+          <span class="task-text">practice meditation +1</span>
+        </li>
+        <li id="addTask" contenteditable="true" class="add-task">➕ add a task</li>
+      </ul>
+    </div>
+  </div>
+
+  <body>
+    <footer class="footer" style = "text-align: left;">
+        <div class="progress-container">
+            <span class="progress-text">In orbit...</span>
+            <div class="progress-bar">
+              <div class="progress-fill"></div>
+            </div>
+          </div>
+    </footer>
+    
+  </body>
+
+  <body>
+    <section>
+        <div class="disply" style="margin-top: 20px;">
+            <p>Display</p>
+            <div class="dropdown">
+                <img src=".vscode/pngegg.png" height="35" width="35" alt="Dropdown image" style="margin-top: -10px; ">
+            </img>
+            </div>
+            <div class="wd">
+                <p>week</p>
+            </div>
+        </div>
+    </section>
+  </body>
+  
+  
   <script src="script.js"></script>
 </body>
-<body>
-  <section class="block1">
-    <div class='jt-container'>
-      <div class='jt-row'>
-        <div class='jt-header'>here is a header 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text
-          <div class='jt-item-price'>12.50</div>
-        </div>
-      </div>
-    </div>  
-  <h1>
- Sample Text 
-  </h1>
-  </section>
 
-  <section class="block2">
-  <h2>
-    Sample Text 2
-  </h2>
-  </section>
-  <section class="block3">
-    <h3>
-      Sample Text 3
-    </h3>
-  </section>
-  <section class="block4">
-  </section>
-  <section class="block5">
-  </section>
-</body>
 </html>
