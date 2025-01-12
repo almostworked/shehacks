@@ -55,8 +55,9 @@ h2 {
 }
 /* Month header */
 h3 {
+  margin-top: 10px;
+  padding-left: 215px;
     padding-top: 0px;
-    padding-left: 205px;
     font-size: 60px;
     text-align: left;
     color: #FFFFFF;
@@ -70,7 +71,7 @@ h3 {
   padding-left: 25px;
   padding-top: 20px;
   margin-left: 50px;
-  margin-top: -20px;
+  margin-top: -40px;
   cursor: default;
   width: 600px;
   height: 400px;
@@ -139,15 +140,25 @@ h4 {
   font-size: 35px;
   color: #ffffff;
 }
+h5 {
+  font-family: 'Inter';
+  font-size: 20px;
+  margin-top: -35px;
+  color: #ffffff;
+  font-weight: 250;
+  font-style: italic;
+}
 #habitBox {
   padding: 20px;
   margin: 0;
   display: flex;
+  margin-top: -100px;
   flex-direction: column;
   height: auto;
 }
 #habitBox h4 {
   color: white;
+  font-size: 27px;
   margin-bottom: 5px;
 }
 #input {
@@ -193,6 +204,7 @@ input[type="color"] {
   margin: 10px auto; /* Center horizontally */
   padding: 8px 16px;
   font-size: 1rem;
+  margin-top: -20px;
   border: none;
   border-radius: 5px;
   background-color: #8163A1; /* Customize button color */
@@ -221,13 +233,14 @@ input[type="color"] {
 }
 
 #missionListContainer {
-  background-color: #5C6C6C;
+  background-color: #5C6666;
   border-radius: 25px;
   width: 25%; 
   padding: 10px;
   margin: 0;
+  margin-top: -150px;
   right: 100px; 
-  top: 200px;
+  top: 130px;
 }
 
   #missionList {
@@ -263,7 +276,7 @@ input[type="color"] {
   }
   #image-container {
     position: relative;
-    top: 180px; /* Moves the image down by 500px */
+    top: 130px; /* Moves the image down by 500px */
     left: 100px;
     display: flex;
   }
@@ -271,10 +284,10 @@ input[type="color"] {
     font-family: 'AppleGaramond-Light';
   font-size: 25px;
   position: relative;
-  top: 60px; /* Moves the image down by 500px */
+  top: 10px; /* Moves the image down by 500px */
   left: 200px;
   display: flex;
-  color: #ffffff;
+  color: #C9AEE6;
   }
   #image-container img {
     width: 100px;
@@ -312,6 +325,7 @@ input[type="color"] {
   transition: color 0.3s;
 }
 
+<<<<<<< HEAD
 .delete-task:hover {
   color: red;
 }
@@ -335,6 +349,9 @@ input[type="color"] {
   outline: none;
   box-shadow: none;
 }
+=======
+
+>>>>>>> ba34991f589cdf2f8cfa4933589c00503aefc4ee
 .completed .task-text {
   text-decoration: line-through;
   color: gray;
