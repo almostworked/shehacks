@@ -1,0 +1,250 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    padding-top: 200px;
+}
+
+.greyBG {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(45, 54, 65, 1);
+    z-index: -1;
+}
+
+.settingsTitle {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    font-weight: 550;
+}
+
+.field-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    font-size: 17px;
+    font-weight: 550;
+    width: 400px;
+    margin-bottom: 20px;
+}
+
+.username {
+    top: 25%;
+    left: 2%;
+}
+
+.password {
+    top: 35%;
+    left: 2%;
+}
+
+.field-container label {
+    margin-right: 15px;
+}
+
+.field-container input {
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    margin-bottom: 10px; 
+}
+
+.field-container input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+input:focus {
+    border: 2px solid white;
+    outline: none;
+}
+
+.change-button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 14px; /* Slightly smaller */
+    cursor: pointer;
+    text-decoration: underline;
+    position: absolute;
+    bottom: -5px; /* Position at the bottom of the input */
+    right: 0; /* Align to the right side */
+    transition: color 0.3s;
+}
+
+.change-button:hover {
+    color: #f0f0f0;
+}
+
+.password-field {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.password-field input {
+    flex-grow: 1;
+}
+
+.password-field button {
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.password-field button:hover {
+    color: #f0f0f0;
+}
+
+.notificationHeader {
+    position: absolute;
+    top: 45%;
+    left: 5%;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    font-weight: 550;
+}
+
+.socialHeader {
+    position: absolute;
+    top: 62%;
+    left: 5%;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    font-weight: 550;
+}
+
+.notification-description {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    font-size: 17px;
+    font-weight: 550;
+    margin-top: 20px;
+}
+
+.social-description {
+    position: absolute;
+    top: 66%;
+    left: 5%;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    font-size: 17px;
+    font-weight: 550;
+    margin-top: 20px;
+}
+
+.notification-switch-container, .social-switch-container {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    padding-left: 10px;
+    color: white;
+}
+
+.notification-switch-container {
+    top: 53.5%;
+    right: 5%;
+}
+
+.social-switch-container {
+    top: 71%; /* Adjust as needed to position the social toggle */
+    right: 5%;
+}
+
+.toggle-wrapper {
+    display: inline-block;
+    background-color: #ccc;
+    border-radius: 30px;
+    padding: 5px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.switch {
+    display: inline-block;
+}
+
+.switch .slider {
+    position: relative;
+    cursor: pointer;
+    width: 60px; 
+    height: 30px; 
+    background-color: #ccc; 
+    border-radius: 50px; 
+    transition: background-color 0.3s ease;
+    box-sizing: border-box;
+    padding: 5px; 
+}
+
+.switch .slider:before {
+    content: "";
+    position: absolute;
+    height: 20px; /* Circle size */
+    width: 20px; /* Circle size */
+    border-radius: 50%;
+    left: -15px; /* Circle alignment inside the slider */
+    top: 5px; /* Circle alignment inside the slider */
+    background-color: white;
+    transition: transform 0.3s ease;
+}
+
+/* Hide the actual checkbox but keep it functional */
+.switch input {
+    opacity: 0; /* Make the checkbox invisible */
+    position: absolute; /* Remove it from layout */
+    z-index: -1; /* Ensure it doesn't interfere with clicks */
+}
+
+.switch input:checked + .slider:before {
+    transform: translateX(20px); /* Move the circle to the right */
+}
+
+/* Ensure the password input field shows asterisks */
+#password-display {
+    -webkit-text-security: circle; /* For Webkit browsers (Chrome, Safari, etc.) */
+    text-security: circle; /* For modern browsers */
+}
+
+.exit-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 10; /* Ensure it's on top */
+  }
+  
