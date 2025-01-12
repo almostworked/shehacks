@@ -35,7 +35,7 @@ section {
 
 .webpageTitle {
   position: absolute;
-  top: 40%;
+  top: 225px;
   right: 41%;
   color: white;
   font-family: 'AppleGaramond', serif;
@@ -45,31 +45,31 @@ section {
 
 .webpageDef {
   position: absolute;
-  top: 52%;
-  right: 41%;
+  top: 330px;
+  right: 42%;
   color: white;
   font-family: 'AppleGaramond', serif;
-  font-size: 30px;
+  font-size: 27px;
   font-weight: 400;
 }
 
 .webpageDef2 {
   position: absolute;
-  top: 52%;
-  right: 32%;
+  top: 330px;
+  right: 35%;
   color: rgba(255, 255, 255, 0.5);
   font-family: 'AppleGaramond', serif;
-  font-size: 30px;
+  font-size: 27px;
   font-weight: 400;
 }
 
 .webpagetext1 {
   position: absolute;
-  top: 60%;
-  left: 52%;
+  top: 380px;
+  left: 760px;
   color: white;
   font-family: 'AppleGaramond', serif;
-  font-size: 25px;
+  font-size: 23px;
   font-weight: 400;
 }
 
@@ -85,11 +85,11 @@ section {
 
 .webpagetext2 {
   position: absolute;
-  top: 65%; 
-  left: 52%;
+  top: 420px; 
+  left: 760px;
   color: rgba(255, 255, 255, 0.5);
   font-family: 'AppleGaramond', serif;
-  font-size: 25px;
+  font-size: 23px;
   font-weight: 400;
 }
 
