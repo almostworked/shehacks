@@ -55,8 +55,8 @@ h2 {
 }
 /* Month header */
 h3 {
-    padding-top: 0px;
-    padding-left: 205px;
+    margin-top: 10px;
+    padding-left: 215px;
     font-size: 60px;
     text-align: left;
     color: #FFFFFF;
@@ -70,9 +70,10 @@ h3 {
   padding-left: 25px;
   padding-top: 20px;
   margin-left: 50px;
-  margin-top: -20px;
+  margin-top: -40px;
   cursor: default;
   width: 600px;
+
   height: 400px;
   border-radius: 25px;
   
@@ -141,12 +142,14 @@ h4 {
 #habitBox {
   padding: 20px;
   margin: 0;
+  margin-top: -100px;
   display: flex;
   flex-direction: column;
   height: auto;
 }
 #habitBox h4 {
   color: white;
+  font-size: 27px;
   margin-bottom: 5px;
 }
 #input {
@@ -213,13 +216,14 @@ input[type="color"] {
 }
 
 #missionListContainer {
-  background-color: #5C6C6C;
+  background-color: #5C6666;
   border-radius: 25px;
   width: 25%; 
   padding: 10px;
   margin: 0;
+  margin-top: -150px;
   right: 100px; 
-  top: 200px;
+  top: 130px;
 }
 
   #missionList {
@@ -233,6 +237,7 @@ input[type="color"] {
     padding: 8px;
     margin: 0; /* Ensure uniform margins */
     display: flex;
+ 
     align-items: center; /* Align icons and text */
     width: 100%; /* Force full width alignment */
     box-sizing: border-box; /* Include padding and borders in the width */
@@ -255,7 +260,7 @@ input[type="color"] {
   }
   #image-container {
     position: relative;
-    top: 180px; /* Moves the image down by 500px */
+    top: 130px; /* Moves the image down by 500px */
     left: 100px;
     display: flex;
   }
@@ -263,10 +268,10 @@ input[type="color"] {
     font-family: 'AppleGaramond-Light';
   font-size: 25px;
   position: relative;
-  top: 60px; /* Moves the image down by 500px */
+  top: 10px; /* Moves the image down by 500px */
   left: 200px;
   display: flex;
-  color: #ffffff;
+  color: #C9AEE6;
   }
   #image-container img {
     width: 100px;
@@ -292,23 +297,6 @@ input[type="color"] {
   margin-left: 10px;
   transition: color 0.3s;
 }
-
-.delete-task:hover {
-  color: red;
-}
-.delete-btn {
-  margin-left: 10px;
-  background: none;
-  border: none;
-  color: red;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.delete-btn:hover {
-  color: darkred;
-}
-
 
 .completed .task-text {
   text-decoration: line-through;
