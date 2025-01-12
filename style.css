@@ -6,6 +6,10 @@
   font-family: 'Inter';
   src: url('./fonts/Inter_18pt-Medium.ttf');
 }
+@font-face {
+  font-family: 'AppleGaramond';
+  src: url('./fonts/AppleGaramond.ttf');
+}
 body {
     font-family: 'Inter';
     text-align: center;
@@ -26,18 +30,19 @@ html {
   top: 0;
   left: 0;
   width: 100%;
-  height: 15%;
+  height: 10%;
   padding: none;
   border: none;
   background-color: #4C545E;
 }
 /* Welcome back astronaut*/
 h1, h2 {
-    font-size: 42px;
+    font-size: 40px;
     font-weight: lighter;
     margin: 0;
     padding-left: 25px;
     padding-top: 25px;
+    padding-bottom: 25px;
 }
 /*What will you do today?*/
 h1 {
@@ -238,7 +243,7 @@ input[type="color"] {
   width: 25%; 
   padding: 10px;
   margin: 0;
-  margin-top: -150px;
+  margin-top: -50px;
   right: 100px; 
   top: 130px;
 }
@@ -281,18 +286,19 @@ input[type="color"] {
     display: flex;
   }
   #daysonMoon {
-    font-family: 'AppleGaramond-Light';
-  font-size: 25px;
-  position: relative;
-  top: 10px; /* Moves the image down by 500px */
-  left: 200px;
-  display: flex;
-  color: #C9AEE6;
+    font-family: 'AppleGaramond';
+    font-size: 25px;
+    position: relative;
+    top: 10px; /* Moves the image down by 500px */
+    left: 200px;
+    display: flex;
+    color: #C9AEE6;
   }
   #image-container img {
     width: 100px;
     height: 100px;
     display: block; /* Prevents extra space below the image */
+
   }
   .add-task:focus {
     color: white;
@@ -325,7 +331,6 @@ input[type="color"] {
   transition: color 0.3s;
 }
 
-<<<<<<< HEAD
 .delete-task:hover {
   color: red;
 }
@@ -349,9 +354,7 @@ input[type="color"] {
   outline: none;
   box-shadow: none;
 }
-=======
 
->>>>>>> ba34991f589cdf2f8cfa4933589c00503aefc4ee
 .completed .task-text {
   text-decoration: line-through;
   color: gray;
@@ -384,19 +387,33 @@ input[type="color"] {
   cursor: pointer;
 }
 #progressBar {
+  position: relative;
   width: 60%;
-  height: 50px;
-  border-radius: 15px;
-  background-color: #909090;
-  margin-left: 90px;
+  margin-left: 80px;
+  height: 40px;
+  background-color: #ddd;  /* The grey base */
+  border-radius: 10px;
+  overflow: hidden;
+  border-radius: 30px;
+}
 
+#progressBase {
+  position: absolute;
+  
+  width: 60;
+  height: 100%;
+  background-color: #ddd;  /* The base (static) */
 }
-#progress {
-  width: 0;
-  height: 10px;
-  background-color: #cd3ae3;
-  border-radius: 5px;
+
+#progressFill {
+  position: absolute;
+  width: 0%;  /* Initially, no progress */
+  height: 100%;
+  background-color: #478449;  /* Green for progress */
+  border-radius: 10px;
+  transition: width 0.5s ease;  /* Smooth transition */
 }
+
 ::-webkit-scrollbar{
   width: 15px;
 }
